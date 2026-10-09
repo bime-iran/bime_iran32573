@@ -1,0 +1,1695 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>بیمه ایران | آرامش، از امروز تا فردا</title>
+<meta name="description" content="اطلاعات بیمه بدنه خودرو، الحاقیه افزایش سرمایه و معرفی پوشش‌های طرح حامی بیمه ایران در نمایندگی ۳۲۵۷۳.">
+<meta name="theme-color" content="#0d0729">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap">
+<style>
+
+:root{
+  color-scheme: light;
+
+  /* brand, sampled from iran.svg */
+  --c-navy:#29166f;
+  --c-sky:#0193de;
+  --c-sun:#e77918;
+  --c-stone:#71645e;
+
+  /* derived neutrals + surfaces */
+  --c-ink:#181141;
+  --c-ink-soft:#4b4478;
+  --c-ink-faint:#6d679a;
+  --c-night:#0d0729;
+  --c-night-2:#1a1049;
+  --c-paper:#ffffff;
+  --c-paper-2:#f6f4ef;
+  --c-line:rgba(41,22,111,.12);
+  --c-line-soft:rgba(41,22,111,.07);
+
+  /* logo geometry, per instance (overridable) */
+  --u-ring:var(--c-navy);
+  --u-rays:var(--c-sky);
+  --u-sun:var(--c-sun);
+  --u-waves:var(--c-stone);
+  --u-word:var(--c-navy);
+
+  /* fluid type scale */
+  --f-xs:clamp(.68rem,.65rem + .16vw,.78rem);
+  --f-sm:clamp(.8rem,.76rem + .24vw,.92rem);
+  --f-md:clamp(.9rem,.85rem + .3vw,1.02rem);
+  --f-lg:clamp(1.02rem,.94rem + .45vw,1.24rem);
+  --f-xl:clamp(1.16rem,1rem + .9vw,1.6rem);
+  --f-h3:clamp(1.18rem,1.02rem + .85vw,1.55rem);
+  --f-h2:clamp(1.6rem,1.1rem + 2.3vw,2.9rem);
+  --f-h1:clamp(2.2rem,1.05rem + 5.6vw,5.4rem);
+  --f-quote:clamp(1.15rem,1rem + 1vw,1.75rem);
+
+  /* fluid rhythm */
+  --gutter:clamp(.9rem,.45rem + 2.2vw,2.6rem);
+  --shell:min(100% - (2 * var(--gutter)),86rem);
+  --band-pad:clamp(1.5rem,1rem + 2.6vw,3.25rem);
+  --stack-1:clamp(.45rem,.35rem + .4vw,.75rem);
+  --stack-2:clamp(.85rem,.7rem + .8vw,1.35rem);
+  --stack-3:clamp(1.5rem,1.1rem + 1.6vw,2.5rem);
+  --stack-4:clamp(2.25rem,1.5rem + 3vw,4rem);
+  --section-pad:clamp(3rem,1.6rem + 6.5vw,8rem);
+
+  --r-xs:.4rem;
+  --r-sm:.7rem;
+  --r-md:1rem;
+  --r-lg:clamp(1.15rem,.8rem + 1.4vw,1.9rem);
+  --r-pill:99rem;
+
+  /* motion language */
+  --e-out:cubic-bezier(.22,.61,.24,1);
+  --e-out-soft:cubic-bezier(.32,.72,.32,1);
+  --e-inout:cubic-bezier(.5,.05,.25,1);
+  --t-fast:.26s;
+  --t-mid:.5s;
+  --t-slow:.85s;
+  --t-panel:.62s;
+
+  --shadow-soft:0 1.4rem 3rem -1.6rem rgba(21,12,58,.35);
+  --shadow-lift:0 2rem 4rem -2rem rgba(21,12,58,.42);
+
+  /* scroll-driven state, written by script */
+  --p:0;
+  --hero:0;
+  --rise:0;
+  --mx:0;
+  --my:0;
+}
+
+/* ============================================================
+   2. BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{
+  -webkit-text-size-adjust:100%;
+  scrollbar-gutter:stable;
+  scroll-padding-top:clamp(4.25rem,8vh,6rem);
+}
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth}
+}
+html.is-locked{overflow:hidden}
+body{
+  margin:0;
+  background:var(--c-night);
+  color:var(--c-ink);
+  font-family:"Vazirmatn","Vazir","Segoe UI",Tahoma,system-ui,sans-serif;
+  font-size:var(--f-md);
+  font-weight:400;
+  line-height:1.85;
+  font-feature-settings:"ss02" 1;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+img,svg{max-width:100%}
+button{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:.14rem solid #6fb4ea;outline-offset:.22rem;border-radius:.35rem}
+::selection{background:rgba(1,147,222,.22)}
+
+.shell{width:var(--shell);margin-inline:auto}
+
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.skip{
+  position:fixed;top:.6rem;inset-inline-start:.6rem;z-index:120;
+  padding:.7em 1.1em;border-radius:var(--r-sm);
+  background:var(--c-paper);color:var(--c-ink);font-size:var(--f-sm);font-weight:600;
+  box-shadow:var(--shadow-soft);
+  transform:translateY(-160%);transition:transform var(--t-fast) var(--e-out);
+}
+.skip:focus-visible{transform:none}
+
+/* ============================================================
+   3. BRAND MARK (geometry comes from iran.svg, never redrawn)
+   ============================================================ */
+.brand{display:block;width:100%;height:auto;overflow:visible}
+.u-ring{fill:var(--u-ring)}
+.u-rays{fill:var(--u-rays)}
+.u-sun{fill:var(--u-sun)}
+.u-waves{fill:var(--u-waves)}
+.u-word{fill:var(--u-word)}
+.brand--tint{--u-ring:#a89ae8;--u-rays:#2ba3e6;--u-sun:#f78920;--u-waves:#7d6cc6;--u-word:#efebff}
+.brand--ghost{--u-ring:currentColor;--u-rays:currentColor;--u-sun:currentColor;--u-waves:currentColor;--u-word:currentColor}
+
+/* ============================================================
+   4. SCENE (scroll-driven 2.5D landscape)
+   ============================================================ */
+.scene{
+  position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+  background:var(--c-night);
+  --scene-x:30%;
+  --scene-w:min(76vh,88vw);
+  --sun-y:calc(85vh - var(--rise) * 30vh);
+}
+.sky{position:absolute;inset:-2% -2% -10%;will-change:opacity}
+.sky--night{
+  background:
+    radial-gradient(78% 46% at 50% 98%,rgba(232,124,58,.36) 0%,rgba(232,124,58,.1) 42%,rgba(232,124,58,0) 72%),
+    radial-gradient(120% 80% at 50% 104%,#3b2064 0%,#221354 38%,#150c3f 66%,#0a0623 100%);
+}
+.sky--dawn{
+  background:
+    radial-gradient(72% 42% at 50% 97%,rgba(255,214,166,.9) 0%,rgba(226,131,66,.45) 34%,rgba(226,131,66,0) 70%),
+    linear-gradient(180deg,#2c2f6d 0%,#57508c 34%,#a86f79 66%,#dda46f 100%);
+  opacity:clamp(0,calc((var(--p) - .02) * 3.4),1);
+}
+.sky--day{
+  background:linear-gradient(180deg,#dbeaf8 0%,#b6d7f1 38%,#8dc4e8 72%,#c4e2f2 100%);
+  opacity:clamp(0,calc((var(--p) - .34) * 3.1),1);
+}
+.sky--dusk{
+  background:linear-gradient(180deg,#1b1148 0%,#3c2168 40%,#6d3a6d 70%,#a95a5c 90%,#d78c58 100%);
+  opacity:clamp(0,calc((var(--p) - .78) * 4.4),1);
+}
+.stars{
+  position:absolute;inset:0;width:100%;height:62%;
+  fill:#fff;opacity:clamp(0,calc(1 - var(--p) * 7),1);
+}
+.stars circle{opacity:.45}
+.stars circle:nth-child(3n){opacity:.22}
+.stars circle:nth-child(4n){opacity:.8;r:.13}
+
+.scene__stage{
+  position:absolute;left:var(--scene-x);top:var(--sun-y);
+  width:var(--scene-w);aspect-ratio:1;
+  transform:translate3d(-50%,-50%,0);
+}
+.scene__layer{position:absolute;inset:0;will-change:transform;transform-style:preserve-3d}
+.scene__layer > svg{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:visible}
+
+/* Logo layers share the same movement so the sun, ridges and outer band do not drift apart. */
+.layer-ring{
+  --u-ring:#9288dc;
+  opacity:.48;
+  filter:drop-shadow(0 0 .75rem rgba(137,119,255,.12));
+  transform:translate3d(calc(var(--mx) * .65vw),calc(var(--my) * -.35vh),0);
+}
+.layer-rays{
+  --u-rays:#7cc7ef;
+  opacity:calc(.46 + var(--p) * .46);
+  -webkit-mask-image:radial-gradient(circle at 49.9% 50.4%,#000 30%,rgba(0,0,0,.62) 45%,rgba(0,0,0,0) 60%);
+  mask-image:radial-gradient(circle at 49.9% 50.4%,#000 30%,rgba(0,0,0,.62) 45%,rgba(0,0,0,0) 60%);
+  transform:
+    translate3d(calc(var(--mx) * .65vw),calc(var(--my) * -.35vh),0)
+    rotate(calc(var(--rise) * 1.5deg + var(--p) * 1.5deg));
+}
+/* sun disc + halo */
+.layer-sun{
+  --u-sun:#ffb055;
+  transform:
+    translate3d(calc(var(--mx) * .65vw),calc(var(--my) * -.35vh),0)
+    scale(calc(1 + var(--p) * .035));
+}
+.sun-disc{
+  position:absolute;left:49.8%;top:44.7%;width:40%;aspect-ratio:1;
+  display:block;border-radius:50%;transform:translate(-50%,-50%);
+  background:
+    radial-gradient(circle at 30% 23%,#fffde3 0%,#fff0bd 12%,#ffd276 35%,#ffad4f 62%,#f07831 82%,#cc4e28 100%);
+  border:1px solid rgba(255,245,200,.9);
+  box-shadow:
+    inset -1.1rem -1.2rem 2.2rem rgba(190,62,22,.2),
+    inset .7rem .6rem 1.3rem rgba(255,255,229,.55),
+    0 0 1.5rem rgba(255,181,89,.48),
+    0 0 4.8rem rgba(255,132,55,.3),
+    0 0 9rem rgba(255,126,48,.16);
+  will-change:transform;
+}
+.sun-disc::after{
+  content:"";position:absolute;inset:4.5%;border-radius:inherit;
+  border:1px solid rgba(255,247,206,.2);
+  background:linear-gradient(145deg,rgba(255,255,255,.2),transparent 42%,rgba(177,58,25,.09));
+  pointer-events:none;
+}
+.halo{
+  position:absolute;left:49.8%;top:50.5%;width:66%;aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(255,186,106,.55) 0%,rgba(255,158,72,.28) 34%,rgba(255,140,60,0) 68%);
+  opacity:calc(.55 + var(--p) * .45);
+  mix-blend-mode:screen;
+}
+/* mountains: logo ridges, sunk so the sun can rise above them */
+.layer-mtn{
+  --u-waves:#22154f;
+  /* Let the mountains lag behind the sun gently, without sideways drift. */
+  transform:
+    translate3d(calc(var(--mx) * .65vw),calc(var(--my) * -.35vh + var(--rise) * 13vh + var(--p) * 2vh),0)
+    scale(calc(1 + var(--p) * .035));
+}
+.mtn-back{transform:scale(1.14);filter:drop-shadow(0 .9rem 1.4rem rgba(12,7,50,.18));opacity:.92}
+.mtn-back .u-waves{--u-waves:#33247a}
+.mtn-front{filter:drop-shadow(0 1.2rem 1.1rem rgba(9,5,32,.24))}
+.mist{
+  position:absolute;left:-6%;right:-6%;top:26%;height:34%;
+  background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(206,228,246,.28) 52%,rgba(255,255,255,0) 100%);
+  opacity:calc(.3 + var(--p) * .45);
+  mix-blend-mode:screen;
+}
+.scene__veil{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(120% 92% at 50% 110%,rgba(13,7,41,.5) 0%,rgba(13,7,41,0) 58%),
+    linear-gradient(180deg,rgba(9,5,26,.32) 0%,rgba(9,5,26,0) 26%);
+  mix-blend-mode:multiply;
+  opacity:calc(1 - var(--p) * .62);
+}
+
+/* ============================================================
+   5. TOP BAR
+   ============================================================ */
+.topbar{
+  position:fixed;inset-inline:0;top:0;z-index:50;
+  color:#f3f0ff;
+  transition:color var(--t-mid) var(--e-out),background-color var(--t-mid) var(--e-out),
+    box-shadow var(--t-mid) var(--e-out),backdrop-filter var(--t-mid) var(--e-out);
+}
+.topbar__inner{
+  display:flex;align-items:center;gap:var(--stack-2);
+  min-height:clamp(3.6rem,7vh,5.1rem);
+  transition:min-height var(--t-mid) var(--e-out);
+}
+html[data-scrolled="1"] .topbar{
+  color:var(--c-ink);
+  background:rgba(250,250,252,.78);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);
+  backdrop-filter:blur(14px) saturate(1.2);
+  box-shadow:0 .1rem 0 rgba(41,22,111,.07),0 1rem 2.4rem -1.6rem rgba(21,12,58,.4);
+}
+html[data-scrolled="1"] .topbar__inner{min-height:clamp(3.1rem,5.6vh,4rem)}
+
+.topbar__brand{display:flex;align-items:center;gap:.55em;flex:0 0 auto;font-weight:700;font-size:var(--f-sm);letter-spacing:0}
+.topbar__brand .brand{width:clamp(1.9rem,2.6vw,2.5rem);height:auto;transition:width var(--t-mid) var(--e-out)}
+html[data-scrolled="1"] .topbar__brand .brand{width:clamp(1.7rem,2.2vw,2.15rem)}
+.topbar__brand span{white-space:nowrap}
+
+.menu{display:flex;align-items:center;gap:clamp(.35rem,.9vw,1.1rem);margin-inline-start:auto}
+.menu a{
+  position:relative;padding:.5em .2em;font-size:var(--f-sm);font-weight:500;opacity:.82;
+  transition:opacity var(--t-fast) var(--e-out);
+}
+.menu a::after{
+  content:"";position:absolute;inset-inline:0;bottom:.15em;height:.11rem;border-radius:99rem;
+  background:currentColor;opacity:0;transform:scaleX(.35);transform-origin:center;
+  transition:opacity var(--t-mid) var(--e-out),transform var(--t-mid) var(--e-out);
+}
+.menu a:hover{opacity:1}
+.menu a:hover::after,.menu a[aria-current="true"]::after{opacity:.85;transform:none}
+.menu a[aria-current="true"]{opacity:1;font-weight:600}
+
+.topbar__cta{
+  flex:0 0 auto;display:inline-flex;align-items:center;padding:.6em 1.15em;border-radius:var(--r-pill);
+  font-size:var(--f-xs);font-weight:600;
+  border:.09rem solid currentColor;opacity:.92;
+  transition:opacity var(--t-fast) var(--e-out),background-color var(--t-fast) var(--e-out),color var(--t-fast) var(--e-out);
+}
+.topbar__cta:hover{opacity:1;background:currentColor}
+.topbar__cta:hover span{color:var(--c-paper)}
+html[data-scrolled="1"] .topbar__cta{background:var(--c-navy);border-color:var(--c-navy);color:#fff;opacity:1}
+html[data-scrolled="1"] .topbar__cta:hover{background:var(--c-night-2)}
+
+.topbar__toggle{
+  display:none;place-items:center;width:2.6rem;height:2.6rem;
+  background:none;border:.09rem solid rgba(255,255,255,.28);border-radius:var(--r-sm);cursor:pointer;
+}
+html[data-scrolled="1"] .topbar__toggle{border-color:var(--c-line)}
+.topbar__toggle i{display:block;width:1.05rem;height:.1rem;background:currentColor;border-radius:99rem;position:relative}
+.topbar__toggle i::before,.topbar__toggle i::after{
+  content:"";position:absolute;inset-inline:0;height:.1rem;background:currentColor;border-radius:99rem;
+  transition:transform var(--t-fast) var(--e-out),opacity var(--t-fast) var(--e-out);
+}
+.topbar__toggle i::before{top:-.34rem}
+.topbar__toggle i::after{top:.34rem}
+.topbar__toggle[aria-expanded="true"] i{background:transparent}
+.topbar__toggle[aria-expanded="true"] i::before{transform:translateY(.34rem) rotate(45deg)}
+.topbar__toggle[aria-expanded="true"] i::after{transform:translateY(-.34rem) rotate(-45deg)}
+
+.sheet{
+  max-height:0;overflow:hidden;opacity:0;visibility:hidden;
+  transition:max-height var(--t-slow) var(--e-out),opacity var(--t-mid) var(--e-out),visibility 0s linear var(--t-slow);
+}
+.sheet.is-open{max-height:80vh;opacity:1;visibility:visible;transition:max-height var(--t-slow) var(--e-out),opacity var(--t-mid) var(--e-out),visibility 0s}
+.sheet__inner{padding-block:var(--stack-2) var(--stack-3)}
+.sheet a{
+  display:block;padding-block:var(--stack-1);font-size:var(--f-lg);font-weight:600;
+  border-bottom:.06rem solid var(--c-line-soft);
+}
+.sheet a:last-child{border-bottom:0}
+
+/* ============================================================
+   6. HERO
+   ============================================================ */
+main{position:relative;z-index:1}
+.hero{
+  position:relative;display:flex;align-items:center;
+  min-height:100vh;min-height:100svh;
+  padding-block:clamp(6rem,16vh,9rem) clamp(4rem,10vh,6rem);
+  color:#f4f1ff;
+}
+.hero__fade{
+  opacity:clamp(0,calc(1 - (var(--hero) - .1) * 1.4),1);
+  transform:translate3d(0,calc(var(--hero) * -3.5vh),0);
+  will-change:opacity,transform;
+}
+.hero__kicker{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-size:var(--f-xs);font-weight:600;
+  padding:.45em 1em;border-radius:var(--r-pill);
+  background:rgba(255,255,255,.08);border:.07rem solid rgba(255,255,255,.18);
+  color:#e9e4ff;
+}
+.hero__kicker .brand{width:1.15em}
+.hero__title{
+  margin-block:var(--stack-3) var(--stack-2);
+  font-size:var(--f-h1);font-weight:800;line-height:1.12;
+  letter-spacing:normal;text-wrap:balance;
+  text-shadow:0 .08em .5em rgba(8,4,24,.5);
+}
+.hero__title em{
+  font-style:normal;
+  background:linear-gradient(96deg,#ffd29b 0%,#e77918 52%,#ffc07a 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+}
+.hero__lead{
+  max-width:min(46ch,88%);font-size:var(--f-lg);line-height:1.95;
+  color:rgba(238,235,255,.76);
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:var(--stack-1) clamp(.7rem,1.6vw,1.1rem);margin-top:var(--stack-3)}
+
+.cue{
+  position:absolute;inset-inline-start:50%;bottom:clamp(1.6rem,4vh,2.6rem);translate:-50% 0;
+  display:grid;justify-items:center;gap:.6em;
+  font-size:var(--f-xs);letter-spacing:.06em;color:rgba(233,229,255,.62);
+  opacity:clamp(0,calc(1 - var(--hero) * 2.2),1);
+}
+.cue__line{position:relative;display:block;width:.08rem;height:clamp(2.4rem,6vh,3.4rem);background:rgba(255,255,255,.22);overflow:hidden;border-radius:99rem}
+.cue__dot{position:absolute;inset-inline:0;top:0;height:38%;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);border-radius:99rem;animation:cue 2.6s var(--e-inout) infinite}
+@keyframes cue{
+  0%{transform:translateY(-100%)}
+  60%,100%{transform:translateY(280%)}
+}
+
+/* ============================================================
+   7. BANDS (content surfaces floating over the scene)
+   ============================================================ */
+.band{position:relative;padding-block:var(--section-pad)}
+.band__surface{
+  position:relative;overflow:hidden;
+  border-radius:var(--r-lg);
+  padding:clamp(1.4rem,1rem + 3vw,4rem);
+  isolation:isolate;
+}
+.band--light .band__surface{
+  background:linear-gradient(180deg,rgba(255,255,255,.965) 0%,rgba(248,247,245,.94) 100%);
+  border:.06rem solid rgba(255,255,255,.7);
+  outline:.06rem solid rgba(41,22,111,.07);
+  outline-offset:-.06rem;
+  box-shadow:var(--shadow-soft);
+  color:var(--c-ink);
+}
+.band--deep .band__surface{
+  background:linear-gradient(158deg,#1e1256 0%,#150d42 46%,#0d0729 100%);
+  border:.06rem solid rgba(255,255,255,.09);
+  box-shadow:var(--shadow-lift);
+  color:#f0edff;
+}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-size:var(--f-xs);font-weight:700;letter-spacing:.12em;
+  color:var(--c-sky);
+  text-transform:none;
+}
+.eyebrow::before{content:"";width:1.9em;height:.08rem;background:currentColor;opacity:.55;border-radius:99rem}
+.band--deep .eyebrow{color:#8fd2f5}
+
+.band__head{max-width:min(60ch,100%);margin-bottom:var(--stack-4)}
+.band__title{
+  margin-block:var(--stack-2) var(--stack-2);
+  font-size:var(--f-h2);font-weight:700;line-height:1.28;text-wrap:balance;
+}
+.band__lead{font-size:var(--f-lg);line-height:1.95;color:var(--c-ink-soft)}
+.band--deep .band__lead{color:rgba(230,226,255,.72)}
+
+/* --- services --- */
+.services__deco{
+  position:absolute;inset-inline-end:-7%;top:-19%;width:min(66%,32rem);aspect-ratio:1;
+  opacity:.13;transform:rotate(14deg);pointer-events:none;z-index:-1;
+  --u-rays:#3fb0e8;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 26%,rgba(0,0,0,.5) 44%,rgba(0,0,0,0) 62%);
+  mask-image:radial-gradient(circle at 50% 50%,#000 26%,rgba(0,0,0,.5) 44%,rgba(0,0,0,0) 62%);
+}
+.services__deco .brand{width:100%}
+
+.cards{
+  display:grid;gap:clamp(.7rem,1.2vw,1.15rem);
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,15.5rem),1fr));
+}
+.card{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;height:100%;
+  padding:clamp(1.1rem,1rem + 1vw,1.7rem);
+  border-radius:var(--r-md);
+  background:
+    radial-gradient(95% 48% at 50% 0%,rgba(1,147,222,.075),transparent 82%),
+    linear-gradient(184deg,rgba(255,255,255,.985) 0%,rgba(242,246,252,.95) 100%);
+  border:.06rem solid rgba(41,22,111,.09);
+  box-shadow:0 .8rem 2rem -1.5rem rgba(21,12,58,.28),inset 0 1px 0 rgba(255,255,255,.95);
+  transform-style:preserve-3d;
+  transition:transform var(--t-mid) var(--e-out),box-shadow var(--t-mid) var(--e-out),
+    border-color var(--t-mid) var(--e-out),background var(--t-mid) var(--e-out);
+}
+.card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
+  background:linear-gradient(135deg,rgba(255,255,255,.52),transparent 37%,rgba(1,147,222,.035) 100%);
+}
+.card::after{
+  content:"";position:absolute;inset-inline:.9rem;bottom:0;height:.14rem;border-radius:99rem;
+  background:linear-gradient(90deg,var(--c-sky),var(--c-sun));
+  transform:scaleX(0);transform-origin:right;
+  transition:transform var(--t-slow) var(--e-out);
+}
+.card:hover,.card:focus-within{
+  transform:translateY(-.48rem) perspective(900px) rotateX(1.15deg);
+  box-shadow:0 1.7rem 3.1rem -1.45rem rgba(21,12,58,.38),0 .25rem .7rem rgba(1,147,222,.07);
+  border-color:rgba(1,147,222,.32);
+}
+.card:hover::after,.card:focus-within::after{transform:none}
+.card__art{
+  position:absolute;inset-inline-end:-9%;bottom:-14%;width:52%;aspect-ratio:1;
+  color:var(--c-navy);opacity:.055;pointer-events:none;
+  transform:rotate(8deg);transition:opacity var(--t-slow) var(--e-out),transform var(--t-slow) var(--e-out);
+}
+.card__art .brand{width:100%}
+.card:hover .card__art,.card:focus-within .card__art{opacity:.11;transform:rotate(2deg) scale(1.04)}
+.card__icon{
+  position:relative;display:grid;place-items:center;align-self:center;
+  width:100%;height:clamp(7.1rem,10vw,8.8rem);margin:0 0 var(--stack-1);
+  color:var(--c-navy);perspective:700px;
+}
+.card__icon::before{
+  content:"";position:absolute;left:18%;right:18%;bottom:.15rem;height:24%;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(1,147,222,.19) 0%,rgba(41,22,111,.075) 45%,transparent 73%);
+  filter:blur(8px);transform:translateZ(-10px);
+}
+.card__icon svg{
+  position:relative;z-index:1;width:100%;height:100%;overflow:visible;
+  filter:drop-shadow(0 .45rem .42rem rgba(19,26,76,.15));
+  transform:translateZ(0);transform-origin:50% 75%;
+  transition:transform .55s var(--e-out),filter .55s var(--e-out);
+}
+.card:hover .card__icon svg,.card:focus-within .card__icon svg{
+  transform:translateY(-.22rem) rotateY(-5deg) scale(1.045);
+  filter:drop-shadow(0 .8rem .55rem rgba(19,26,76,.2));
+}
+.card__title{margin-top:0;font-size:var(--f-h3);font-weight:700;line-height:1.4}
+.card__text{margin-top:.55em;font-size:var(--f-sm);line-height:1.9;color:var(--c-ink-soft);flex:1}
+.card__go{
+  display:inline-flex;align-items:center;gap:.5em;margin-top:var(--stack-2);
+  font-size:var(--f-xs);font-weight:700;color:var(--c-sky);
+}
+.card__go svg{width:.95em;height:.95em;transition:transform var(--t-mid) var(--e-out)}
+.card:hover .card__go svg{transform:translateX(-.28em)}
+.card__open{
+  position:absolute;inset:0;background:none;border:0;border-radius:inherit;cursor:pointer;
+  font-size:0;color:transparent;
+}
+.card:focus-within{outline:.14rem solid #6fb4ea;outline-offset:.2rem}
+.card__open:focus-visible{outline:0}
+
+/* --- about --- */
+.about{
+  display:grid;gap:clamp(1.6rem,3.4vw,3.5rem);align-items:center;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+}
+.about__art{
+  position:relative;aspect-ratio:1;width:min(100%,30rem);justify-self:center;
+  display:grid;place-items:center;
+}
+.about__ring{
+  position:absolute;width:132%;aspect-ratio:1;--u-ring:#9dbdf0;opacity:.3;
+  animation:spin 96s linear infinite;
+}
+.about__ring .brand{width:100%}
+.about__mark{position:relative;width:66%;filter:drop-shadow(0 1.6rem 2.6rem rgba(5,2,18,.55))}
+.about__glow{
+  position:absolute;width:120%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,178,87,.22) 0%,rgba(255,178,87,0) 62%);
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.features{display:grid;gap:0;margin-top:var(--stack-4);border-top:.06rem solid rgba(255,255,255,.12)}
+.feature{
+  display:grid;gap:.2rem var(--stack-2);
+  grid-template-columns:auto minmax(0,1fr);
+  padding-block:var(--stack-2);
+  border-bottom:.06rem solid rgba(255,255,255,.12);
+}
+.feature__num{
+  grid-row:span 2;font-size:var(--f-xs);font-weight:700;color:#8fd2f5;
+  padding-top:.35em;letter-spacing:.1em;
+}
+.feature__title{font-size:var(--f-lg);font-weight:600;line-height:1.5}
+.feature__text{font-size:var(--f-sm);line-height:1.9;color:rgba(228,224,255,.68)}
+
+/* --- contact --- */
+.contact{display:grid;gap:clamp(1.4rem,3vw,3rem);grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.contact__watermark{
+  position:absolute;inset-inline-end:-8%;bottom:-14%;width:min(76%,40rem);
+  color:var(--c-navy);opacity:.06;pointer-events:none;z-index:-1;
+}
+.contact__watermark .brand{width:100%}
+.panel-list{display:grid;gap:0;margin-top:var(--stack-3);border-top:.06rem solid var(--c-line-soft)}
+.panel-list > div{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem var(--stack-2);
+  padding-block:var(--stack-1);
+  border-bottom:.06rem solid var(--c-line-soft);
+}
+.panel-list dt{font-size:var(--f-sm);font-weight:600;color:var(--c-ink)}
+.panel-list dd{margin:0;font-size:var(--f-sm);color:var(--c-ink-soft)}
+.links{display:grid;gap:0;margin-top:var(--stack-3);border-top:.06rem solid var(--c-line-soft)}
+.links a{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--stack-2);
+  padding-block:var(--stack-1);
+  font-size:var(--f-sm);font-weight:600;
+  border-bottom:.06rem solid var(--c-line-soft);
+  transition:color var(--t-fast) var(--e-out),padding-inline-start var(--t-mid) var(--e-out);
+}
+.links a svg{width:.9em;height:.9em;color:var(--c-sky);transition:transform var(--t-mid) var(--e-out)}
+.links a:hover{color:var(--c-sky)}
+.links a:hover svg{transform:translateX(-.3em)}
+
+/* ============================================================
+   INSURANCE INFORMATION
+   ============================================================ */
+.insurance-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2vw,1.5rem);align-items:stretch;
+}
+.insurance-card{
+  min-width:0;padding:clamp(1.1rem,1rem + 1.2vw,2rem);border:1px solid var(--c-line);
+  border-radius:var(--r-md);background:rgba(255,255,255,.82);box-shadow:0 .8rem 2.1rem -1.6rem rgba(21,12,58,.32);
+}
+.insurance-card--home{background:linear-gradient(160deg,rgba(246,248,255,.98),rgba(255,255,255,.94));}
+.insurance-card__tag{
+  display:inline-flex;align-items:center;gap:.45em;padding:.35em .8em;border-radius:var(--r-pill);
+  background:rgba(1,147,222,.09);color:var(--c-navy);font-size:var(--f-xs);font-weight:700;
+}
+.insurance-card__title{margin-top:var(--stack-2);font-size:var(--f-h3);line-height:1.55;font-weight:800;text-wrap:balance;}
+.insurance-card__text{margin-top:var(--stack-2);font-size:var(--f-sm);line-height:2;color:var(--c-ink-soft);}
+.insurance-card h4{margin-top:var(--stack-3);font-size:var(--f-lg);line-height:1.7;font-weight:800;color:var(--c-ink);}
+.insurance-callout{margin-top:var(--stack-2);padding:1rem;border-radius:var(--r-sm);border:1px solid rgba(199,77,43,.2);background:rgba(231,121,24,.075);font-size:var(--f-sm);line-height:1.95;color:#65331e;}
+.insurance-callout strong{display:block;margin-bottom:.25em;color:#9a3b20;}
+.insurance-list{display:grid;gap:.65rem;margin-top:var(--stack-2);}
+.insurance-list li{position:relative;padding-inline-start:1.65rem;font-size:var(--f-sm);line-height:1.9;color:var(--c-ink-soft);}
+.insurance-list li::before{content:"✓";position:absolute;inset-inline-start:0;top:.05em;display:grid;place-items:center;width:1.25rem;height:1.25rem;border-radius:50%;background:rgba(1,147,222,.1);color:#087db8;font-size:.8rem;font-weight:900;}
+.insurance-facts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:var(--stack-3);}
+.insurance-facts span{padding:.4em .75em;border-radius:var(--r-sm);background:rgba(41,22,111,.06);color:var(--c-navy);font-size:var(--f-xs);font-weight:700;}
+.insurance-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:var(--stack-3);}
+.insurance-actions .btn{white-space:normal;text-align:center;}
+.insurance-note{margin-top:var(--stack-2);font-size:var(--f-xs);line-height:1.85;color:var(--c-ink-faint);}
+.insurance-handle{direction:ltr;unicode-bidi:isolate;display:inline-block;}
+@media (max-width:52rem){.insurance-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ============================================================
+   8. FOOTER
+   ============================================================ */
+.footer{
+  position:relative;z-index:1;
+  background:linear-gradient(180deg,rgba(13,7,41,0) 0%,rgba(11,6,34,.86) 34%,#0a0524 100%);
+  color:#e9e5ff;
+  padding-block:clamp(2.6rem,6vw,5rem) clamp(2rem,4vw,3rem);
+}
+.footer__inner{display:grid;gap:clamp(1.6rem,3vw,3rem);grid-template-columns:minmax(0,1.1fr) minmax(0,1.2fr)}
+.footer__lockup{width:clamp(9rem,16vw,13rem)}
+.footer__text{margin-top:var(--stack-2);font-size:var(--f-sm);line-height:1.9;color:rgba(226,222,255,.66);max-width:34ch}
+.footer__cols{display:grid;gap:var(--stack-3);grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr))}
+.footer__col h3{font-size:var(--f-sm);font-weight:700;margin-bottom:var(--stack-1)}
+.footer__col a{display:inline-block;padding-block:.25em;font-size:var(--f-sm);color:rgba(226,222,255,.68);transition:color var(--t-fast) var(--e-out)}
+.footer__col a:hover{color:#9fdaf7}
+.footer__base{
+  grid-column:1 / -1;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--stack-1) var(--stack-2);
+  margin-top:clamp(2rem,5vw,3.5rem);padding-top:var(--stack-2);
+  border-top:.06rem solid rgba(255,255,255,.1);
+  font-size:var(--f-xs);color:rgba(220,216,252,.55);
+}
+
+/* ============================================================
+   9. FLOATING BRAND (bottom-left, drifts with scroll)
+   ============================================================ */
+.float-brand{
+  position:fixed;z-index:40;
+  left:clamp(.75rem,1.8vw,1.6rem);bottom:clamp(.75rem,2vh,1.5rem);
+  display:inline-flex;align-items:center;gap:.55em;
+  padding:.42em;border-radius:var(--r-pill);
+  background:rgba(252,252,253,.86);
+  border:.06rem solid rgba(41,22,111,.1);
+  box-shadow:0 1rem 2rem -1.1rem rgba(13,7,41,.5);
+  transform:translate3d(calc(var(--mx) * -.5vw),calc(var(--p) * -2rem),0);
+  transition:transform var(--t-slow) var(--e-out),box-shadow var(--t-mid) var(--e-out);
+  will-change:transform;
+}
+.float-brand .brand{width:clamp(1.75rem,2.4vw,2.25rem)}
+.float-brand__label{
+  max-width:0;overflow:hidden;white-space:nowrap;
+  font-size:var(--f-xs);font-weight:600;color:var(--c-navy);
+  transition:max-width var(--t-slow) var(--e-out),opacity var(--t-mid) var(--e-out),padding var(--t-slow) var(--e-out);
+  opacity:0;padding-inline-end:0;
+}
+.float-brand:hover,.float-brand:focus-visible{box-shadow:0 1.4rem 2.6rem -1.2rem rgba(13,7,41,.55)}
+.float-brand:hover .float-brand__label,.float-brand:focus-visible .float-brand__label{max-width:8rem;opacity:1;padding-inline-end:.35em}
+
+/* ============================================================
+   10. SERVICE PANEL
+   ============================================================ */
+.scrim{
+  position:fixed;inset:0;z-index:55;
+  background:rgba(11,6,34,.44);
+  opacity:0;visibility:hidden;
+  transition:opacity var(--t-mid) var(--e-out),visibility 0s linear var(--t-mid);
+}
+.scrim.is-open{opacity:1;visibility:visible;transition:opacity var(--t-mid) var(--e-out),visibility 0s}
+.scrim.is-dragging{transition:none}
+
+.panel{
+  position:fixed;z-index:60;top:0;bottom:0;right:0;
+  display:flex;flex-direction:column;
+  width:min(46rem,100%);
+  background:linear-gradient(180deg,#fdfdff 0%,#f5f6fa 100%);
+  border-left:.06rem solid rgba(41,22,111,.1);
+  box-shadow:-2.4rem 0 5rem -2rem rgba(13,7,41,.45);
+  transform:translateX(100%);visibility:hidden;
+  transition:transform var(--t-mid) var(--e-out),visibility 0s linear var(--t-mid);
+  will-change:transform;
+  touch-action:pan-y;
+}
+.panel.is-open{
+  transform:none;visibility:visible;
+  transition:transform var(--t-panel) var(--e-out),visibility 0s;
+}
+.panel.is-dragging{transition:none}
+.panel__grip{
+  flex:0 0 auto;display:grid;place-items:center;
+  padding-block:clamp(.55rem,1.4vh,.9rem) .3rem;
+  cursor:grab;touch-action:pan-y;
+}
+.panel__grip span{display:block;width:clamp(2.4rem,7vw,3.4rem);height:.24rem;border-radius:99rem;background:rgba(41,22,111,.18)}
+.panel__scroll{
+  flex:1;overflow-y:auto;overscroll-behavior:contain;
+  padding:0 clamp(1.1rem,1rem + 2.4vw,2.6rem);
+  -webkit-overflow-scrolling:touch;
+}
+.panel__head{position:relative;padding-bottom:var(--stack-3);border-bottom:.06rem solid var(--c-line-soft)}
+.panel__title{
+  margin-top:var(--stack-2);
+  font-size:clamp(1.5rem,1.1rem + 2vw,2.3rem);font-weight:800;line-height:1.3;text-wrap:balance;
+}
+.panel__lead{margin-top:var(--stack-2);font-size:var(--f-md);line-height:1.95;color:var(--c-ink-soft)}
+.panel__close{
+  position:absolute;inset-inline-end:0;top:0;
+  display:inline-flex;align-items:center;gap:.45em;
+  padding:.5em .9em;border-radius:var(--r-pill);
+  background:rgba(41,22,111,.06);border:.06rem solid transparent;
+  font-size:var(--f-xs);font-weight:600;color:var(--c-ink);cursor:pointer;
+  transition:background var(--t-fast) var(--e-out),color var(--t-fast) var(--e-out);
+}
+.panel__close:hover{background:var(--c-navy);color:#fff}
+.panel__close i{display:block;width:.66em;height:.66em;position:relative}
+.panel__close i::before,.panel__close i::after{
+  content:"";position:absolute;inset-inline:0;top:50%;height:.11rem;background:currentColor;border-radius:99rem;
+}
+.panel__close i::before{transform:rotate(45deg)}
+.panel__close i::after{transform:rotate(-45deg)}
+
+.psection{
+  padding-block:var(--stack-3);
+  border-bottom:.06rem solid var(--c-line-soft);
+  opacity:0;transform:translate3d(0,1.1rem,0);
+  transition:opacity var(--t-fast) var(--e-out),transform var(--t-fast) var(--e-out);
+}
+.panel.is-open .psection{
+  opacity:1;transform:none;
+  transition-duration:var(--t-slow);
+  transition-delay:calc(.16s + var(--i) * .07s);
+}
+.psection__h{
+  display:flex;align-items:center;gap:.6em;
+  font-size:var(--f-lg);font-weight:700;
+}
+.psection__h::before{
+  content:"";width:.4rem;height:.4rem;border-radius:50%;background:var(--c-sky);flex:0 0 auto;
+}
+.psection__p{margin-top:var(--stack-2);font-size:var(--f-md);line-height:1.95;color:var(--c-ink-soft)}
+.psection__list{display:grid;gap:0;margin-top:var(--stack-2)}
+.psection__list div{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem var(--stack-2);
+  padding-block:var(--stack-1);border-bottom:.06rem dashed var(--c-line);
+}
+.psection__list dt{font-size:var(--f-sm);font-weight:600}
+.psection__list dd{margin:0;font-size:var(--f-sm);color:var(--c-ink-faint)}
+
+.panel__foot{
+  flex:0 0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--stack-2);
+  padding:var(--stack-2) clamp(1.1rem,1rem + 2.4vw,2.6rem);
+  padding-bottom:calc(var(--stack-2) + env(safe-area-inset-bottom,0px));
+  background:rgba(255,255,255,.9);
+  border-top:.06rem solid var(--c-line-soft);
+}
+.panel__note{font-size:var(--f-xs);line-height:1.7;color:var(--c-ink-faint);max-width:46ch}
+.panel__hint{display:none;flex-basis:100%;font-size:var(--f-xs);color:var(--c-ink-faint)}
+
+/* ============================================================
+   11. BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  min-height:2.9em;padding:.8em 1.55em;border:.06rem solid transparent;border-radius:.72rem;
+  font-size:var(--f-sm);font-weight:600;line-height:1;cursor:pointer;
+  transition:transform var(--t-fast) var(--e-out),box-shadow var(--t-mid) var(--e-out),
+    background-color var(--t-fast) var(--e-out),color var(--t-fast) var(--e-out),border-color var(--t-fast) var(--e-out);
+}
+.btn--primary{
+  background:linear-gradient(178deg,#0fa4e8 0%,#0179b9 100%);
+  color:#fff;
+  box-shadow:0 .7rem 1.7rem -.7rem rgba(1,121,185,.7),inset 0 .06rem 0 rgba(255,255,255,.28);
+}
+.btn--primary:hover{transform:translateY(-.16rem);box-shadow:0 1.2rem 2.2rem -.8rem rgba(1,121,185,.8),inset 0 .06rem 0 rgba(255,255,255,.35)}
+.btn--primary:active{transform:translateY(0)}
+.btn--ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.26);color:#f2efff}
+.btn--ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.42)}
+.band--light .btn--ghost{background:transparent;border-color:var(--c-line);color:var(--c-ink)}
+.band--light .btn--ghost:hover{background:rgba(41,22,111,.05);border-color:rgba(41,22,111,.24)}
+.band--deep .btn--ghost{border-color:rgba(255,255,255,.22)}
+
+/* ============================================================
+   12. REVEAL / MOTION
+   ============================================================ */
+[data-reveal]{opacity:0;transform:translate3d(0,2.4rem,0);transition:opacity var(--t-slow) var(--e-out),transform var(--t-slow) var(--e-out)}
+[data-reveal="side"]{transform:translate3d(2.2rem,0,0)}
+[data-reveal="soft"]{transform:translate3d(0,1.4rem,0) scale(.985)}
+[data-reveal].is-in{opacity:1;transform:none}
+
+[data-stagger] > *{
+  opacity:0;transform:translate3d(0,2.1rem,0);
+  transition:opacity var(--t-slow) var(--e-out) var(--d,0s),transform var(--t-slow) var(--e-out) var(--d,0s);
+}
+[data-stagger].is-in > *{opacity:1;transform:none}
+[data-stagger] > *:nth-child(2){--d:.09s}
+[data-stagger] > *:nth-child(3){--d:.18s}
+[data-stagger] > *:nth-child(4){--d:.27s}
+[data-stagger] > *:nth-child(5){--d:.36s}
+[data-stagger] > *:nth-child(6){--d:.45s}
+
+/* hero entrance */
+.hero__kicker,.hero__title,.hero__lead,.hero__actions,.cue{
+  opacity:0;transform:translate3d(0,1.5rem,0);
+  transition:opacity 1.1s var(--e-out),transform 1.1s var(--e-out);
+}
+.is-ready .hero__kicker{transition-delay:.15s}
+.is-ready .hero__title{transition-delay:.28s}
+.is-ready .hero__lead{transition-delay:.44s}
+.is-ready .hero__actions{transition-delay:.56s}
+.is-ready .cue{transition-delay:.75s}
+.is-ready .hero__kicker,.is-ready .hero__title,.is-ready .hero__lead,
+.is-ready .hero__actions{opacity:1;transform:none}
+.is-ready .cue{opacity:clamp(0,calc(1 - var(--hero) * 2.2),1);transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;transition-delay:0s !important;
+  }
+  html{scroll-behavior:auto}
+  [data-reveal],[data-stagger] > *,.hero__kicker,.hero__title,.hero__lead,.hero__actions{opacity:1 !important;transform:none !important}
+  .scene__layer,.scene__stage,.float-brand{transform:none !important}
+  .about__ring{animation:none}
+  .cue__dot{display:none}
+  .sky{transition:none}
+}
+
+/* ============================================================
+   13. RESPONSIVE
+   ============================================================ */
+html[data-scrolled="1"] .topbar__brand .brand{
+  --u-ring:var(--c-navy);--u-rays:var(--c-sky);--u-sun:var(--c-sun);--u-waves:var(--c-stone);
+}
+@media (max-width:64rem){
+  .scene{--scene-x:36%;--scene-w:min(68vh,94vw)}
+  .about{grid-template-columns:minmax(0,1fr)}
+  .about__art{order:-1;width:min(100%,22rem)}
+  .about__mark{width:62%}
+  .footer__inner{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:56rem){
+  .menu{display:none}
+  .topbar__cta{display:none}
+  .topbar__toggle{display:grid;margin-inline-start:auto}
+  .scene{--scene-x:50%;--scene-w:min(58vh,86vw);--sun-y:calc(80vh - var(--rise) * 24vh)}
+  .layer-mtn{--u-waves:#241651}
+}
+@media (max-width:44rem){
+  .contact{grid-template-columns:minmax(0,1fr)}
+  .services__deco{top:-11%;width:min(84%,18rem)}
+  body{line-height:1.8}
+  .hero__lead{max-width:100%}
+  .band--light .band__surface{padding-inline:clamp(1rem,.7rem + 3vw,1.6rem)}
+  .panel__foot{flex-direction:column;align-items:flex-start}
+  .card__art{width:56%;opacity:.07}
+}
+@media (min-width:120rem){
+  :root{--shell:min(100% - (2 * var(--gutter)),104rem)}
+}
+@media (pointer:coarse){
+  .panel__hint{display:block}
+}
+</style>
+<noscript><style>[data-reveal],[data-stagger] > *,.hero__kicker,.hero__title,.hero__lead,.hero__actions{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#services">پرش به محتوای اصلی</a>
+
+<svg id="brand-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+<symbol id="a-ring" viewBox="0 0 1046.84 1226.09">
+<g transform="translate(-166.11 -89.54)">
+<path stroke="#397c9e" stroke-width="2.00" fill="none" stroke-linecap="butt" vector-effect="non-scaling-stroke" d=" M 982.41 401.39 L 977.44 404.54" />
+<path d=" M 1128.93 666.12 Q 1127.80 670.32 1126.05 676.00 Q 1099.74 761.24 1044.11 829.90 Q 1009.55 872.55 962.65 907.94 Q 954.58 914.02 946.39 919.53 Q 855.90 980.43 747.79 994.58 Q 737.79 995.89 727.99 996.64 Q 611.97 1005.54 506.23 958.36 Q 448.44 932.57 400.29 891.99 C 381.84 876.44 362.95 858.14 346.43 838.85 C 280.17 761.47 241.07 662.78 237.39 560.93 C 236.85 546.15 236.86 530.43 237.75 515.33 Q 239.00 494.18 244.44 463.30 Q 257.42 389.68 293.24 325.17 Q 351.06 221.07 452.25 157.30 Q 477.07 141.66 505.80 128.89 Q 556.15 106.49 612.37 95.78 Q 622.23 93.90 632.09 92.82 Q 671.75 88.46 712.46 89.89 C 820.00 93.66 925.11 139.27 1002.91 212.96 Q 1089.69 295.15 1125.49 409.15 Q 1145.61 473.25 1145.67 541.44 Q 1145.68 559.93 1144.44 577.96 Q 1142.16 610.98 1134.13 646.13 C 1132.59 652.86 1130.74 659.34 1128.93 666.12 Z M 274.14 486.12 C 259.71 588.21 284.65 694.40 342.85 779.31 C 388.90 846.51 452.89 900.22 528.16 931.70 Q 642.84 979.67 765.69 958.33 Q 775.53 956.62 785.25 954.28 Q 844.30 940.08 892.20 913.60 Q 995.01 856.78 1054.93 755.74 Q 1083.67 707.27 1098.44 651.66 Q 1111.54 602.31 1112.83 555.65 Q 1114.69 488.30 1094.64 422.15 Q 1075.12 357.71 1037.50 303.96 Q 969.49 206.80 860.19 157.64 Q 851.97 153.94 841.93 150.12 Q 763.11 120.11 679.09 121.95 Q 668.81 122.18 659.30 123.02 C 584.01 129.71 510.92 155.40 449.84 198.83 Q 357.63 264.39 309.10 367.41 C 291.50 404.75 279.90 445.39 274.14 486.12 Z" />
+</g>
+</symbol>
+<symbol id="a-rays" viewBox="0 0 1046.84 1226.09">
+<g transform="translate(-166.11 -89.54)">
+<path d=" M 772.95 157.18 C 758.25 212.62 741.74 267.55 726.52 322.79 A 0.62 0.61 8.9 0 1 725.90 323.24 C 700.16 321.95 676.12 321.63 651.14 323.99 Q 650.87 324.01 650.82 323.75 L 618.49 155.93 A 1.21 1.21 0.0 0 1 619.33 154.55 C 628.68 151.69 635.22 151.38 647.66 150.45 Q 659.79 149.54 672.00 148.86 C 705.27 147.01 739.21 149.16 772.50 156.44 Q 773.12 156.57 772.95 157.18 Z" />
+<path d=" M 619.96 333.14 C 597.94 340.05 577.24 351.05 558.36 364.53 A 0.79 0.78 -36.4 0 1 557.28 364.37 Q 510.27 302.26 467.76 245.66 Q 461.91 237.87 454.23 229.96 Q 453.84 229.55 454.08 229.04 Q 456.40 224.19 460.85 221.08 C 499.68 193.99 542.68 173.10 588.71 161.72 A 0.43 0.42 -11.7 0 1 589.24 162.06 Q 591.21 173.66 593.31 184.47 Q 601.50 226.77 610.39 271.99 Q 615.95 300.29 620.76 331.87 Q 620.91 332.85 619.96 333.14 Z" />
+<path d=" M 776.44 338.11 Q 766.28 333.94 755.81 329.87 Q 755.35 329.69 755.49 329.21 C 771.77 274.62 786.95 219.73 802.41 164.77 A 0.81 0.80 15.2 0 1 803.40 164.21 Q 845.42 175.74 885.30 198.36 Q 910.41 212.61 934.77 229.83 A 0.44 0.43 -51.6 0 1 934.84 230.48 Q 921.49 245.14 908.65 259.66 Q 865.28 308.69 820.16 360.31 A 0.65 0.63 -52.7 0 1 819.33 360.43 Q 799.06 347.39 776.44 338.11 Z" />
+<path d=" M 483.52 439.65 C 454.57 424.24 424.55 409.76 394.96 395.36 Q 367.01 381.76 335.53 365.13 Q 335.06 364.88 335.29 364.41 Q 336.28 362.35 337.41 360.37 C 361.88 317.68 391.17 278.59 428.17 247.14 A 1.37 1.36 37.1 0 1 429.62 246.94 C 432.09 248.04 433.82 249.80 435.44 251.99 Q 484.21 317.94 534.90 383.62 Q 535.21 384.02 534.84 384.37 Q 509.48 408.64 492.27 440.18 A 1.60 1.59 13.0 0 1 490.94 441.01 C 488.27 441.11 485.94 440.94 483.52 439.65 Z" />
+<path d=" M 982.41 401.39 L 977.44 404.54 Q 970.40 408.67 962.98 412.04 Q 949.22 418.31 948.18 418.81 Q 921.41 431.87 894.25 443.86 Q 893.26 444.30 892.77 443.32 C 880.83 419.45 862.69 398.21 843.30 379.11 Q 842.92 378.74 843.27 378.35 C 880.16 337.59 912.84 299.71 947.42 260.73 C 951.12 256.56 954.30 253.66 958.63 250.80 Q 958.94 250.59 959.22 250.84 Q 1012.05 298.81 1045.67 361.18 Q 1047.71 364.96 1049.40 371.60 Q 1049.53 372.10 1049.05 372.28 C 1030.73 379.18 1013.76 388.80 996.77 396.27 Q 993.08 397.89 982.41 401.39 Z" />
+<path d=" M 349.76 406.21 C 392.34 426.75 434.54 448.10 476.67 469.54 A 1.04 1.04 0.0 0 1 477.21 470.71 Q 473.83 484.31 469.44 499.28 C 468.48 502.55 468.04 506.07 467.67 509.32 Q 465.92 524.26 464.35 537.28 Q 463.90 541.00 463.07 545.51 Q 462.97 546.02 462.45 546.01 C 404.31 545.21 347.57 546.81 291.65 546.82 Q 290.77 546.82 290.78 545.94 C 291.27 494.31 302.19 442.97 321.18 394.71 A 0.84 0.84 0.0 0 1 322.17 394.20 C 332.07 396.68 340.74 401.86 349.76 406.21 Z" />
+<path d=" M 942.98 454.30 Q 1002.28 425.97 1062.49 399.35 A 0.75 0.74 -24.0 0 1 1063.47 399.72 Q 1064.64 402.31 1065.66 405.06 Q 1083.82 453.79 1089.85 506.26 Q 1090.65 513.25 1091.50 520.24 Q 1093.27 534.71 1091.99 548.68 Q 1091.94 549.22 1091.40 549.20 C 1078.10 548.83 1064.65 548.85 1051.87 548.47 Q 985.51 546.49 919.94 545.76 Q 919.34 545.75 919.29 545.15 Q 918.42 533.62 917.15 521.99 Q 914.34 496.36 905.51 473.20 Q 905.31 472.67 905.82 472.42 Q 924.57 463.09 942.98 454.30 Z" />
+<path d=" M 410.99 575.66 C 428.97 575.54 447.31 575.14 465.43 574.62 Q 466.07 574.60 466.10 575.24 C 466.87 594.40 473.51 612.54 479.52 630.76 Q 481.61 637.10 483.39 644.05 A 0.67 0.66 70.6 0 1 483.03 644.81 C 436.35 666.70 390.77 690.54 344.30 713.67 C 339.39 716.11 334.15 717.63 328.88 718.74 Q 328.26 718.87 328.00 718.29 Q 298.43 652.78 291.67 578.53 A 0.70 0.70 0.0 0 1 292.34 577.77 Q 346.00 576.07 410.99 575.66 Z" />
+<path d=" M 1053.05 721.33 Q 1052.05 723.43 1051.10 725.50 A 0.55 0.55 0.0 0 1 1050.38 725.77 Q 973.44 689.94 895.03 650.15 Q 894.54 649.90 894.79 649.41 C 905.24 629.10 912.68 607.16 915.59 585.08 Q 916.13 580.94 916.61 576.89 Q 916.69 576.27 917.32 576.26 Q 957.46 575.73 989.30 576.78 Q 1042.59 578.53 1090.18 578.57 Q 1090.60 578.57 1090.57 578.99 C 1087.77 627.87 1073.91 677.09 1053.05 721.33 Z" />
+</g>
+</symbol>
+<symbol id="a-sun" viewBox="0 0 1046.84 1226.09">
+<g transform="translate(-166.11 -89.54)">
+<path d=" M 737.75 364.21 C 770.52 367.08 798.04 387.05 823.35 406.35 Q 829.63 411.14 834.20 416.56 C 850.05 435.35 861.27 456.79 870.22 479.83 C 888.97 528.10 884.13 582.82 863.71 630.85 Q 863.38 631.63 862.56 631.41 C 858.80 630.42 855.58 629.48 851.97 627.71 Q 769.94 587.33 695.00 550.22 Q 691.12 548.30 687.22 550.17 Q 598.22 592.91 512.56 633.73 Q 512.09 633.95 511.94 633.45 Q 501.42 598.55 498.14 564.66 Q 493.78 519.72 507.99 478.73 Q 514.51 459.92 526.84 442.30 C 550.58 408.36 585.77 384.16 625.12 370.01 Q 636.14 366.04 647.81 362.52 Q 656.67 359.85 664.99 359.00 Q 705.41 354.89 740.68 361.58 Q 745.29 362.45 740.64 363.12 Q 739.22 363.33 737.71 363.82 Q 736.79 364.12 737.75 364.21 Z" />
+</g>
+</symbol>
+<symbol id="a-waves" viewBox="0 0 1046.84 1226.09">
+<g transform="translate(-166.11 -89.54)">
+<path d=" M 982.41 401.39 Q 983.44 405.08 979.25 406.00 Q 978.26 406.22 977.44 404.54 L 982.41 401.39 Z" />
+<path d=" M 779.16 684.16 Q 779.60 684.59 779.35 684.03 Q 769.93 662.97 760.72 640.13 A 0.39 0.38 84.6 0 1 761.14 639.61 Q 768.32 640.99 774.91 641.21 Q 788.17 641.67 802.74 641.82 C 815.05 641.96 827.22 644.19 837.76 649.55 Q 840.89 651.14 844.35 652.78 Q 937.50 696.88 1033.15 741.02 Q 1034.21 741.51 1033.05 741.63 Q 1003.03 744.88 974.96 745.61 C 965.66 745.85 956.12 746.43 946.75 747.15 Q 906.47 750.27 870.49 752.81 C 856.28 753.81 840.84 753.85 826.22 754.92 C 797.78 756.99 769.20 759.93 740.49 760.79 Q 729.16 761.13 720.43 761.71 Q 680.49 764.39 640.12 767.73 Q 636.67 768.02 633.25 765.71 Q 591.53 737.54 548.67 709.33 Q 548.31 709.09 547.91 709.27 C 487.57 736.00 427.46 760.96 367.21 786.55 A 1.45 1.45 0.0 0 1 365.49 786.09 L 332.62 742.07 A 0.43 0.42 58.8 0 1 332.77 741.44 Q 428.65 694.24 524.60 647.62 Q 529.15 645.41 537.81 644.57 C 545.99 643.78 554.33 642.94 562.28 642.55 Q 593.96 640.97 624.79 637.54 A 0.22 0.22 0.0 0 1 625.01 637.87 Q 613.18 657.28 603.08 677.75 Q 602.59 678.74 603.50 678.10 C 621.78 665.19 640.74 652.48 659.77 640.03 A 0.43 0.42 -17.5 0 1 660.43 640.37 Q 661.06 664.96 659.23 688.67 Q 659.09 690.49 660.01 688.91 Q 675.93 661.56 693.49 633.19 A 0.27 0.27 0.0 0 1 693.98 633.25 Q 704.69 666.88 716.69 698.98 Q 716.95 699.68 717.11 698.95 C 721.47 678.23 726.12 657.43 729.61 636.54 A 0.23 0.23 0.0 0 1 730.00 636.42 Q 734.22 640.67 738.81 645.16 Q 759.24 665.16 779.16 684.16 Z" />
+<path d=" M 520.46 908.97 Q 468.24 886.60 424.78 849.84 Q 399.91 828.82 378.48 806.18 A 0.30 0.29 56.1 0 1 378.57 805.71 C 431.43 781.27 485.03 758.22 537.80 733.19 A 1.13 1.11 48.2 0 1 538.89 733.26 Q 575.39 756.24 605.38 775.83 Q 682.36 826.10 761.00 877.66 Q 790.15 896.77 825.79 919.46 A 0.42 0.42 0.0 0 1 825.74 920.19 C 815.06 925.14 803.52 925.99 792.26 928.32 Q 783.90 930.04 776.05 931.16 Q 745.16 935.58 736.49 936.72 C 724.55 938.30 712.91 938.86 699.80 938.79 Q 674.90 938.65 652.84 938.73 Q 642.06 938.76 629.07 937.05 C 590.76 931.98 554.80 923.68 520.46 908.97 Z" />
+<path d=" M 1018.94 769.07 C 979.02 832.41 921.34 882.24 852.74 911.14 Q 851.97 911.47 851.27 911.01 Q 786.61 868.20 712.98 819.99 Q 688.92 804.23 666.09 788.91 Q 664.16 787.62 666.48 787.48 Q 721.28 784.24 776.01 781.66 Q 813.21 779.91 852.89 777.11 Q 862.88 776.40 872.87 776.09 Q 912.77 774.85 952.40 771.82 C 974.52 770.12 996.81 768.94 1018.75 768.10 A 0.37 0.37 0.0 0 1 1019.13 768.51 Q 1019.10 768.81 1018.94 769.07 Z" />
+</g>
+</symbol>
+<symbol id="w-word" viewBox="0 0 1046.84 1226.09">
+<g transform="translate(-166.11 -89.54)">
+<rect x="351.21" y="1064.26" width="62.86" height="161.74" rx="0.42" />
+<rect x="597.72" y="1064.25" width="62.80" height="161.76" rx="0.54" />
+<path d=" M 882.48 1200.13 C 874.68 1215.67 859.38 1227.96 841.59 1227.59 Q 818.37 1227.11 793.52 1227.08 Q 793.02 1227.08 793.01 1226.58 Q 791.98 1178.74 791.70 1132.07 Q 791.66 1125.51 790.60 1122.29 Q 788.68 1116.42 782.94 1112.82 C 771.66 1105.74 752.89 1109.58 747.32 1122.38 Q 745.99 1125.44 745.81 1129.54 Q 744.67 1155.38 745.51 1173.34 C 746.04 1184.78 755.79 1185.69 764.69 1185.72 Q 765.26 1185.72 765.26 1186.29 L 765.20 1226.55 Q 765.20 1227.13 764.61 1227.13 Q 749.45 1226.91 734.05 1227.37 Q 724.23 1227.66 712.75 1225.16 Q 700.32 1222.44 695.37 1211.19 Q 691.17 1201.64 690.93 1190.90 C 690.37 1166.57 690.23 1144.49 692.55 1122.27 C 693.85 1109.77 701.25 1097.50 712.12 1091.00 Q 717.37 1087.87 724.79 1086.31 C 739.10 1083.32 753.29 1083.87 767.41 1084.02 Q 776.08 1084.12 787.74 1083.42 C 804.55 1082.41 821.19 1082.80 837.80 1082.95 Q 838.31 1082.95 838.36 1083.46 Q 838.77 1088.31 838.74 1090.75 C 838.44 1120.76 837.39 1150.83 839.75 1181.89 Q 839.79 1182.39 840.19 1182.69 C 848.21 1188.66 858.51 1191.50 866.68 1184.41 C 877.20 1175.29 881.76 1161.88 883.05 1148.18 Q 884.39 1133.99 883.53 1118.59 C 882.78 1105.20 890.49 1093.52 902.31 1088.08 Q 906.98 1085.93 915.75 1084.58 Q 927.57 1082.77 937.98 1082.77 Q 952.42 1082.77 976.05 1082.95 C 993.23 1083.07 1010.25 1081.47 1027.40 1081.63 Q 1028.19 1081.64 1028.18 1082.43 Q 1027.96 1127.95 1028.15 1172.61 Q 1028.16 1176.26 1029.40 1179.21 C 1032.03 1185.51 1039.85 1192.36 1047.55 1191.19 C 1055.70 1189.95 1061.41 1183.16 1063.90 1175.47 Q 1064.95 1172.23 1065.03 1165.92 C 1065.37 1138.89 1065.32 1111.57 1065.13 1083.72 A 0.90 0.90 0.0 0 1 1066.03 1082.81 L 1126.20 1082.78 Q 1126.69 1082.78 1126.72 1083.27 Q 1126.98 1087.91 1126.97 1091.98 Q 1126.91 1132.42 1126.99 1171.15 C 1127.01 1180.32 1131.39 1189.19 1140.38 1192.31 Q 1141.00 1192.52 1141.63 1192.33 C 1151.14 1189.40 1155.98 1179.41 1155.98 1169.92 Q 1155.97 1125.29 1155.94 1083.44 Q 1155.94 1082.83 1156.56 1082.83 L 1212.41 1082.78 A 0.54 0.54 0.0 0 1 1212.95 1083.33 Q 1211.30 1155.33 1211.80 1227.71 Q 1211.80 1228.30 1211.22 1228.30 L 1158.97 1228.30 Q 1158.41 1228.30 1158.36 1227.74 L 1156.79 1209.29 A 0.50 0.49 67.7 0 0 1155.98 1208.95 C 1144.24 1218.69 1128.42 1226.17 1113.02 1226.17 C 1100.23 1226.17 1087.92 1218.76 1078.52 1210.04 A 0.92 0.92 0.0 0 0 1077.32 1209.99 C 1068.04 1217.13 1058.29 1223.64 1047.33 1226.20 C 1033.78 1229.36 1019.89 1223.07 1010.56 1212.86 Q 1008.38 1210.47 1006.20 1208.18 Q 1005.71 1207.66 1005.30 1208.24 C 997.06 1219.67 984.09 1226.03 970.21 1226.79 Q 945.26 1228.16 916.08 1226.04 C 900.70 1224.92 885.82 1215.91 883.25 1200.25 Q 883.05 1199.00 882.48 1200.13 Z M 972.1826 1128.9635 A 19.60 19.60 0.0 0 0 952.5485 1109.3977 L 949.8285 1109.4024 A 19.60 19.60 0.0 0 0 930.2627 1129.0366 L 930.3374 1171.8165 A 19.60 19.60 0.0 0 0 949.9715 1191.3823 L 952.6915 1191.3776 A 19.60 19.60 0.0 0 0 972.2573 1171.7434 L 972.1826 1128.9635 Z" />
+<path d=" M 485.15 1226.58 C 485.78 1239.92 484.88 1253.27 481.05 1265.76 C 469.57 1303.12 434.95 1307.62 401.52 1307.50 A 0.32 0.31 0.0 0 1 401.20 1307.19 L 401.09 1258.33 Q 401.09 1257.74 401.67 1257.70 C 414.21 1256.69 425.12 1254.29 429.18 1240.38 Q 431.05 1233.97 430.86 1227.50 Q 430.42 1212.13 430.38 1200.65 Q 430.14 1140.04 430.24 1082.99 Q 430.24 1082.72 430.51 1082.72 L 486.54 1082.88 Q 487.29 1082.88 487.29 1083.63 Q 487.24 1122.58 487.22 1169.34 Q 487.21 1176.52 488.57 1179.95 Q 491.26 1186.81 498.09 1190.71 C 505.92 1195.18 513.74 1189.42 517.83 1182.66 Q 519.49 1179.92 519.59 1176.68 Q 520.83 1138.01 521.05 1104.64 Q 521.11 1094.28 521.74 1083.43 Q 521.77 1082.86 522.34 1082.86 L 579.81 1082.83 A 0.45 0.45 0.0 0 1 580.26 1083.28 Q 580.34 1129.69 580.34 1180.21 Q 580.35 1191.00 579.04 1196.30 C 575.91 1209.02 566.96 1218.94 554.11 1223.11 Q 542.17 1226.98 529.27 1226.83 C 514.28 1226.65 500.60 1225.23 485.85 1225.82 Q 485.12 1225.85 485.15 1226.58 Z" />
+<circle cx="257.32" cy="1133.83" r="22.66" />
+<path d=" M 330.02 1259.68 Q 324.42 1276.27 311.31 1290.75 C 304.54 1298.23 294.89 1304.68 285.46 1308.58 Q 257.61 1320.07 228.72 1312.84 Q 193.55 1304.03 176.86 1270.97 C 171.69 1260.73 168.89 1248.68 167.48 1236.76 Q 165.93 1223.70 166.14 1210.00 Q 166.45 1188.66 166.38 1167.28 Q 166.37 1166.63 167.03 1166.63 L 219.43 1166.56 Q 220.00 1166.55 219.99 1167.12 Q 219.64 1196.62 219.80 1223.50 Q 219.86 1234.34 221.12 1241.41 C 223.66 1255.78 231.21 1268.10 245.33 1272.74 C 252.95 1275.24 261.68 1271.46 267.63 1266.42 Q 271.50 1263.14 274.39 1257.86 Q 282.29 1243.40 282.40 1229.30 Q 282.66 1197.45 282.46 1165.89 Q 282.45 1165.33 283.02 1165.33 C 301.26 1165.45 319.07 1164.72 336.94 1166.62 A 0.63 0.63 0.0 0 1 337.50 1167.31 C 335.81 1184.44 336.25 1201.78 336.07 1218.84 C 335.93 1232.70 334.37 1246.79 330.02 1259.68 Z" />
+<path d=" M 1090.34 1310.65 C 1078.35 1303.05 1078.55 1281.74 1090.11 1273.99 Q 1101.26 1266.51 1112.56 1271.71 C 1121.66 1275.90 1127.63 1285.84 1126.05 1295.93 C 1125.62 1298.65 1124.33 1300.78 1123.32 1303.26 C 1120.84 1309.39 1114.44 1313.27 1107.90 1314.26 Q 1098.35 1315.72 1090.34 1310.65 Z" />
+<path d=" M 561.68 1285.41 C 564.73 1274.15 576.54 1267.99 587.66 1270.44 Q 603.91 1274.03 605.83 1290.75 C 606.41 1295.83 602.50 1304.13 600.26 1308.60 Q 600.02 1309.07 599.56 1309.33 C 590.04 1314.68 579.84 1317.09 570.03 1310.95 C 561.87 1305.84 559.22 1294.52 561.68 1285.41 Z" />
+<path d=" M 1057.41 1305.44 Q 1050.44 1314.72 1038.55 1314.69 C 1029.87 1314.67 1023.68 1309.82 1018.39 1303.39 Q 1017.33 1302.10 1017.27 1300.40 C 1017.00 1292.74 1016.49 1282.66 1021.70 1277.50 Q 1033.31 1266.04 1048.17 1271.76 C 1061.90 1277.05 1066.29 1293.60 1057.41 1305.44 Z" />
+<circle cx="1183.89" cy="1292.27" r="22.52" />
+<path d=" M 507.84 1312.00 Q 496.90 1306.80 496.72 1294.51 Q 496.63 1288.43 497.44 1281.77 C 497.62 1280.26 498.46 1279.48 499.50 1278.52 Q 513.25 1265.68 530.48 1272.66 C 535.52 1274.70 538.54 1281.34 540.09 1286.27 Q 543.78 1298.07 534.65 1307.94 C 527.75 1315.39 516.82 1316.26 507.84 1312.00 Z" />
+</g>
+</symbol>
+</svg>
+
+<!-- animated landscape: sky, stars, sun, logo rays, logo ridge -->
+<div class="scene" aria-hidden="true">
+  <div class="sky sky--night"></div>
+  <div class="sky sky--dawn"></div>
+  <div class="sky sky--day"></div>
+  <div class="sky sky--dusk"></div>
+  <svg class="stars" viewBox="0 0 100 62" preserveAspectRatio="none">
+    <circle cx="8" cy="7" r=".1"/><circle cx="21" cy="15" r=".12"/><circle cx="33" cy="5" r=".09"/>
+    <circle cx="47" cy="12" r=".11"/><circle cx="62" cy="6" r=".1"/><circle cx="74" cy="17" r=".12"/>
+    <circle cx="88" cy="9" r=".1"/><circle cx="95" cy="21" r=".09"/><circle cx="15" cy="24" r=".1"/>
+    <circle cx="40" cy="22" r=".09"/><circle cx="55" cy="27" r=".11"/><circle cx="69" cy="30" r=".1"/>
+    <circle cx="27" cy="31" r=".1"/><circle cx="82" cy="33" r=".11"/><circle cx="5" cy="35" r=".09"/>
+    <circle cx="93" cy="40" r=".1"/><circle cx="35" cy="38" r=".09"/><circle cx="60" cy="41" r=".09"/>
+  </svg>
+  <div class="scene__stage">
+    <div class="scene__layer layer-ring">
+      <svg viewBox="70.91 0 908.65 908.52"><use href="#a-ring" class="u-ring"/></svg>
+    </div>
+    <div class="scene__layer layer-rays">
+      <span class="halo"></span>
+      <svg viewBox="70.91 0 908.65 908.52"><use href="#a-rays" class="u-rays"/></svg>
+    </div>
+    <div class="scene__layer layer-sun">
+      <span class="sun-disc"></span>
+    </div>
+    <div class="scene__layer layer-mtn">
+      <span class="mist"></span>
+      <svg class="mtn-back" viewBox="70.91 0 908.65 908.52"><use href="#a-waves" class="u-waves"/></svg>
+      <svg class="mtn-front" viewBox="70.91 0 908.65 908.52"><use href="#a-waves" class="u-waves"/></svg>
+    </div>
+  </div>
+  <div class="scene__veil"></div>
+</div>
+
+<header class="topbar" id="topbar">
+  <div class="shell">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="#home" aria-label="بیمه ایران، بازگشت به ابتدای صفحه">
+        <svg class="brand brand--tint" viewBox="70.91 0 908.65 908.52" aria-hidden="true">
+          <use href="#a-ring" class="u-ring"/><use href="#a-rays" class="u-rays"/>
+          <use href="#a-sun" class="u-sun"/><use href="#a-waves" class="u-waves"/>
+        </svg>
+        <span>بیمه ایران</span>
+      </a>
+      <nav class="menu" aria-label="ناوبری اصلی">
+        <a href="#home">خانه</a>
+        <a href="#services">خدمات</a>
+        <a href="#insurance">پوشش‌ها</a>
+        <a href="#about">درباره بیمه</a>
+        <a href="#contact">تماس</a>
+      </nav>
+      <a class="topbar__cta" href="#contact"><span>تماس با ما</span></a>
+      <button class="topbar__toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-sheet" aria-label="نمایش منو">
+        <i aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <div class="sheet" id="menu-sheet">
+    <div class="shell">
+      <nav class="sheet__inner" aria-label="ناوبری موبایل">
+        <a href="#home">خانه</a>
+        <a href="#services">خدمات</a>
+        <a href="#insurance">پوشش‌ها</a>
+        <a href="#about">درباره بیمه</a>
+        <a href="#contact">تماس</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="shell">
+      <div class="hero__fade">
+        <p class="hero__kicker">
+          <svg class="brand brand--tint" viewBox="70.91 0 908.65 908.52" aria-hidden="true">
+            <use href="#a-ring" class="u-ring"/><use href="#a-rays" class="u-rays"/>
+            <use href="#a-sun" class="u-sun"/><use href="#a-waves" class="u-waves"/>
+          </svg>
+          <span>بیمه ایران</span>
+        </p>
+        <h1 class="hero__title">آرامش، از امروز<br><em>تا فردا</em></h1>
+        <p class="hero__lead">
+          از بیمه خودرو تا حفاظت از خانه و دارایی‌ها؛ برای انتخاب پوشش مناسب و بررسی شرایط بیمه‌نامه، همراه شما هستیم.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#services">مشاهده خدمات</a>
+          <a class="btn btn--ghost" href="#about">درباره بیمه ایران</a>
+        </div>
+      </div>
+    </div>
+    <a class="cue" href="#services" aria-label="رفتن به بخش خدمات">
+      <span class="cue__text">ادامه</span>
+      <span class="cue__line" aria-hidden="true"><span class="cue__dot"></span></span>
+    </a>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="band band--light" id="services" aria-labelledby="services-h">
+    <div class="shell">
+      <div class="band__surface" data-reveal="soft">
+        <span class="services__deco" aria-hidden="true">
+          <svg class="brand" viewBox="70.91 0 908.65 908.52"><use href="#a-rays" class="u-rays"/></svg>
+        </span>
+
+        <header class="band__head" data-stagger>
+          <p class="eyebrow">خدمات بیمه ایران</p>
+          <h2 class="band__title" id="services-h">چهار مسیر برای اطمینان خاطر</h2>
+          <p class="band__lead">
+برای آشنایی با بیمه خودرو، آتش‌سوزی، مسئولیت و حوادث، کارت هر خدمت را انتخاب کنید؛ جزئیات پوشش‌ها و راه‌های مشاوره هم در ادامه آمده است.
+          </p>
+        </header>
+
+        <ul class="cards" role="list" data-stagger>
+          <li>
+            <article class="card">
+              <span class="card__art" aria-hidden="true">
+                <svg class="brand" viewBox="70.91 0 908.65 908.52"><use href="#a-rays" class="u-rays"/></svg>
+              </span>
+              <span class="card__icon card__icon--car" aria-hidden="true">
+                <svg viewBox="0 0 260 150" role="img" aria-label="خودروی قرمز سه‌بعدی" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="car-body" x1="0" y1="0" x2=".92" y2="1"><stop stop-color="#ff776b"/><stop offset=".24" stop-color="#f52c36"/><stop offset=".58" stop-color="#cc1024"/><stop offset=".82" stop-color="#8d0719"/><stop offset="1" stop-color="#500a18"/></linearGradient>
+    <linearGradient id="car-top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffaaa0"/><stop offset=".42" stop-color="#f84b4d"/><stop offset="1" stop-color="#a70b24"/></linearGradient>
+    <linearGradient id="car-glass" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#e5faff"/><stop offset=".25" stop-color="#6eb6d7"/><stop offset=".72" stop-color="#193a64"/><stop offset="1" stop-color="#091b35"/></linearGradient>
+    <linearGradient id="car-tire" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4b5263"/><stop offset=".25" stop-color="#171b29"/><stop offset=".72" stop-color="#050711"/><stop offset="1" stop-color="#343b4a"/></linearGradient>
+    <linearGradient id="car-rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".25" stop-color="#9caec8"/><stop offset=".6" stop-color="#52647d"/><stop offset="1" stop-color="#e6f2ff"/></linearGradient>
+    <linearGradient id="car-base" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dbeeff" stop-opacity=".8"/><stop offset="1" stop-color="#7bb7e9" stop-opacity=".05"/></linearGradient>
+  </defs>
+  <ellipse cx="130" cy="128" rx="90" ry="10" fill="#6ba7db" opacity=".2"/>
+  <path d="M40 119Q130 133 222 116L211 126Q130 140 49 127Z" fill="url(#car-base)"/>
+  <ellipse cx="78" cy="105" rx="23" ry="27" fill="#111827"/><ellipse cx="78" cy="105" rx="15.5" ry="19" fill="url(#car-tire)"/><ellipse cx="78" cy="105" rx="10.2" ry="13" fill="url(#car-rim)"/><ellipse cx="78" cy="105" rx="4.2" ry="5.5" fill="#53677f"/><path d="M78 92v26M68 105h20M71 97l14 16M85 97l-14 16" stroke="#e7f4ff" stroke-width="2" opacity=".75"/>
+  <ellipse cx="190" cy="101" rx="22" ry="25" fill="#111827"/><ellipse cx="190" cy="101" rx="15" ry="18" fill="url(#car-tire)"/><ellipse cx="190" cy="101" rx="10" ry="12" fill="url(#car-rim)"/><ellipse cx="190" cy="101" rx="4" ry="4.8" fill="#53677f"/><path d="M190 89v24M180 101h20M183 93l14 16M197 93l-14 16" stroke="#e7f4ff" stroke-width="2" opacity=".75"/>
+  <path d="M24 91 36 79 65 69 92 43Q104 31 129 33L166 42Q180 46 194 64L222 76Q234 81 236 92L231 105 210 111 205 95Q200 82 188 82Q174 82 169 96L101 101Q96 84 79 84Q62 84 56 101L34 101Q25 99 24 91Z" fill="url(#car-body)" stroke="#9b1023" stroke-width="1.4"/>
+  <path d="M79 69 101 46Q108 39 126 40L129 69Z" fill="url(#car-glass)" stroke="#ffb8b0" stroke-width="1.6"/><path d="M135 40 163 47Q174 50 185 66L135 69Z" fill="url(#car-glass)" stroke="#ffb8b0" stroke-width="1.6"/>
+  <path d="M128 39 134 71" stroke="#870b20" stroke-width="3"/><path d="M43 81 69 72 76 72 67 80 44 86Z" fill="#ff9d91" opacity=".85"/><path d="M203 75 223 81 228 87 207 84Z" fill="#fff3c0"/><path d="M207 86 227 90" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M35 94 52 94 54 99 34 99Z" fill="#e5f2ff"/><path d="M45 103Q112 113 222 99" fill="none" stroke="#ff9b91" stroke-width="2" opacity=".72"/><path d="M104 75 151 75" stroke="#ff9a92" stroke-width="1.5" opacity=".8"/><path d="M116 81 159 80" stroke="#780b1d" stroke-width="1.2" opacity=".7"/>
+  <path d="M28 90 35 79 43 77 37 89Z" fill="#fff" opacity=".6"/><path d="M42 113Q128 122 220 108" stroke="#f9a7a1" stroke-width="1.2" fill="none" opacity=".5"/>
+</svg>
+              </span>
+              <h3 class="card__title">شخص ثالث و بدنه</h3>
+              <p class="card__text">بررسی بیمه شخص ثالث و به‌روزرسانی ارزش بیمه بدنه متناسب با ارزش روز خودرو.</p>
+              <span class="card__go" aria-hidden="true">
+                مشاهده جزئیات
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 4 6l3.5 3.5"/></svg>
+              </span>
+              <button class="card__open" type="button" data-service="third-party" aria-label="مشاهده جزئیات شخص ثالث و بدنه"></button>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <span class="card__art" aria-hidden="true">
+                <svg class="brand" viewBox="70.91 0 908.65 908.52"><use href="#a-rays" class="u-rays"/></svg>
+              </span>
+              <span class="card__icon card__icon--fire" aria-hidden="true">
+                <svg viewBox="0 0 260 150" role="img" aria-label="خانه و شعلهٔ آتش سه‌بعدی" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="house-wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0c8"/><stop offset=".45" stop-color="#efc58c"/><stop offset="1" stop-color="#a96b3c"/></linearGradient><linearGradient id="house-roof" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#6479a9"/><stop offset=".42" stop-color="#33456f"/><stop offset="1" stop-color="#172442"/></linearGradient><linearGradient id="flame" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff5a0"/><stop offset=".25" stop-color="#ffb32c"/><stop offset=".68" stop-color="#ff5d18"/><stop offset="1" stop-color="#bd211b"/></linearGradient></defs>
+  <ellipse cx="130" cy="126" rx="76" ry="9" fill="#ed9d54" opacity=".18"/><path d="M48 116 130 132 213 111 132 97Z" fill="#c6d5ec"/><path d="M48 116 130 132 130 139 48 123Z" fill="#7586a5"/><path d="M130 132 213 111 213 118 130 139Z" fill="#516789"/>
+  <path d="M72 76 124 44 178 72 126 100Z" fill="url(#house-roof)"/><path d="M72 76 126 100 126 113 72 89Z" fill="#d6a774"/><path d="M126 100 178 72 178 86 126 113Z" fill="#b27d55"/><path d="M63 74 123 37 188 71 177 78 124 50 74 81Z" fill="url(#house-roof)" stroke="#9aaed1" stroke-width="1"/><path d="M80 84 123 61 123 106 80 87Z" fill="url(#house-wall)"/><path d="M123 61 169 83 169 105 123 106Z" fill="#dba773"/><path d="M90 81 109 91 109 105 90 96Z" fill="#ffdb8b" stroke="#6e4e3d" stroke-width="2"/><path d="M91 82 109 92" stroke="#fff5c7" stroke-width="2"/><path d="M140 79 158 88 158 101 140 92Z" fill="#ffbe56" stroke="#6e4e3d" stroke-width="2"/><path d="M149 83 149 97M140 85 158 94" stroke="#6e4e3d" stroke-width="1.5"/>
+  <path d="M174 59Q165 47 176 35Q177 47 186 48Q197 31 192 18Q218 42 202 62Q196 73 183 68Q170 67 174 59Z" fill="url(#flame)" stroke="#f07525" stroke-width="1.5"/><path d="M184 61Q178 52 188 43Q190 54 196 56Q198 64 190 67Z" fill="#fff4b3"/><path d="M169 70Q161 62 168 55" stroke="#ffb23c" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+</svg>
+              </span>
+              <h3 class="card__title">حریق</h3>
+              <p class="card__text">آشنایی با بیمه حریق و طرح حامی برای محافظت از خانه، اثاثیه و دارایی‌های شما.</p>
+              <span class="card__go" aria-hidden="true">
+                مشاهده جزئیات
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 4 6l3.5 3.5"/></svg>
+              </span>
+              <button class="card__open" type="button" data-service="fire" aria-label="مشاهده جزئیات حریق"></button>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <span class="card__art" aria-hidden="true">
+                <svg class="brand" viewBox="70.91 0 908.65 908.52"><use href="#a-rays" class="u-rays"/></svg>
+              </span>
+              <span class="card__icon card__icon--shield" aria-hidden="true">
+                <svg viewBox="0 0 260 150" role="img" aria-label="سپر محافظ سه‌بعدی" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="shield-edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#bceaff"/><stop offset=".3" stop-color="#6faee9"/><stop offset=".65" stop-color="#2b5599"/><stop offset="1" stop-color="#182b65"/></linearGradient><linearGradient id="shield-face" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#5ed1ff"/><stop offset=".27" stop-color="#1f8bd7"/><stop offset=".65" stop-color="#2157b0"/><stop offset="1" stop-color="#162a68"/></linearGradient></defs>
+  <ellipse cx="130" cy="127" rx="53" ry="8" fill="#148de1" opacity=".16"/><path d="M130 16 188 36 184 84Q177 111 130 133Q83 111 76 84L72 36Z" fill="url(#shield-edge)" stroke="#d5f2ff" stroke-width="2.5"/><path d="M130 25 178 41 174 81Q168 102 130 122Q92 102 86 81L82 41Z" fill="url(#shield-face)" stroke="#174e96" stroke-width="2"/><path d="M91 43 130 30 169 43" fill="none" stroke="#b9efff" stroke-width="3" opacity=".85"/><path d="M101 72 120 91 158 53" fill="none" stroke="#d9fff8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".35"/><path d="M101 69 120 87 157 51" fill="none" stroke="#f3fffd" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M93 48 101 83Q107 100 129 112" fill="none" stroke="#93e1ff" stroke-width="2" opacity=".55"/><path d="M130 26 130 122" stroke="#8cd5ff" stroke-width="1" opacity=".28"/>
+</svg>
+              </span>
+              <h3 class="card__title">مسئولیت</h3>
+              <p class="card__text">آشنایی با مسئولیت‌های حرفه‌ای و مدنی و بررسی پوشش متناسب با نوع فعالیت.</p>
+              <span class="card__go" aria-hidden="true">
+                مشاهده جزئیات
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 4 6l3.5 3.5"/></svg>
+              </span>
+              <button class="card__open" type="button" data-service="liability" aria-label="مشاهده جزئیات مسئولیت"></button>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <span class="card__art" aria-hidden="true">
+                <svg class="brand" viewBox="70.91 0 908.65 908.52"><use href="#a-rays" class="u-rays"/></svg>
+              </span>
+              <span class="card__icon card__icon--health" aria-hidden="true">
+                <svg viewBox="0 0 260 150" role="img" aria-label="نشان سلامت و حوادث سه‌بعدی" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="health-base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9f5ff"/><stop offset=".45" stop-color="#72c7ed"/><stop offset="1" stop-color="#2674b8"/></linearGradient><linearGradient id="health-heart" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#ff9298"/><stop offset=".42" stop-color="#f13f5b"/><stop offset="1" stop-color="#a8113b"/></linearGradient></defs>
+  <ellipse cx="130" cy="127" rx="64" ry="9" fill="#45b2ed" opacity=".18"/><path d="M130 18 187 37 183 83Q175 111 130 132Q85 111 77 83L73 37Z" fill="url(#health-base)" stroke="#e6fbff" stroke-width="2.4"/><path d="M130 27 177 43 173 80Q166 101 130 120Q94 101 87 80L83 43Z" fill="#e9f9ff" stroke="#7ec6e9" stroke-width="2"/><path d="M130 48C118 34 94 44 98 63Q101 77 130 98Q159 77 162 63C166 44 142 34 130 48Z" fill="url(#health-heart)" stroke="#c1244a" stroke-width="1.5"/><path d="M119 63H127L132 54 138 73 144 63H152" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M92 45 104 82Q110 97 130 109" stroke="#fff" stroke-width="2" opacity=".5" fill="none"/>
+</svg>
+              </span>
+              <h3 class="card__title">حوادث انفرادی</h3>
+              <p class="card__text">بررسی پوشش حوادث و انتخاب بیمه متناسب با شرایط و نیازهای شخصی.</p>
+              <span class="card__go" aria-hidden="true">
+                مشاهده جزئیات
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 4 6l3.5 3.5"/></svg>
+              </span>
+              <button class="card__open" type="button" data-service="accident" aria-label="مشاهده جزئیات حوادث انفرادی"></button>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INSURANCE GUIDES ============ -->
+  <section class="band band--light" id="insurance" aria-labelledby="insurance-h">
+    <div class="shell">
+      <div class="band__surface" data-reveal="soft">
+        <header class="band__head" data-stagger>
+          <p class="eyebrow">راهنمای انتخاب پوشش</p>
+          <h2 class="band__title" id="insurance-h">پوشش درست، آرامش بیشتر برای خودرو و خانه</h2>
+          <p class="band__lead">با تغییر ارزش دارایی‌ها، بازبینی بیمه‌نامه هم اهمیت دارد. در ادامه، نکات بیمه بدنه و پوشش‌های معرفی‌شده در طرح حامی بیمه ایران را بخوانید.</p>
+        </header>
+
+        <div class="insurance-grid">
+          <article class="insurance-card insurance-card--auto" aria-labelledby="auto-insurance-h">
+            <span class="insurance-card__tag">🚗 بیمه بدنه خودرو</span>
+            <h3 class="insurance-card__title" id="auto-insurance-h">با افزایش قیمت خودرو، آیا بیمه بدنه شما هم به‌روز است؟</h3>
+            <p class="insurance-card__text">قیمت خودروها در بازار تغییر می‌کند. ارزش خودرویی که امروز دارید ممکن است با ارزشی که هنگام صدور بیمه‌نامه بدنه ثبت شده، یکسان نباشد.</p>
+            <div class="insurance-callout">
+              <strong>هشدار مهم درباره ارزش بیمه‌نامه</strong>
+              اگر سرمایه ثبت‌شده در بیمه‌نامه به‌روز نباشد، مبلغ خسارت پرداختی ممکن است برای پوشش هزینه‌های تعمیر کافی نباشد و بخشی از هزینه بر عهده شما بماند.
+            </div>
+            <h4>راهکار: الحاقیه افزایش سرمایه</h4>
+            <p class="insurance-card__text">با بررسی شرایط و صدور الحاقیه افزایش سرمایه، می‌توانید ارزش بیمه‌نامه بدنه را متناسب با ارزش روز خودرو به‌روزرسانی کنید. این کار به تناسب بهتر سرمایه بیمه‌شده با ارزش خودرو و کاهش نگرانی هنگام خسارت کمک می‌کند.</p>
+            <ul class="insurance-list">
+              <li>بررسی ارزش ثبت‌شده در بیمه‌نامه در مقایسه با ارزش روز خودرو.</li>
+              <li>بررسی امکان دریافت خسارت بر اساس شرایط و حدود تعهدات بیمه‌نامه به‌روز.</li>
+              <li>دریافت راهنمایی برای محافظت بهتر از سرمایه‌ای که صرف خودرو کرده‌اید.</li>
+            </ul>
+            <p class="insurance-card__text">برای استعلام رایگان شرایط الحاقیه افزایش سرمایه و راهنمایی درباره صدور آن، با نمایندگی تماس بگیرید یا در بله پیام دهید.</p>
+            <div class="insurance-actions">
+              <a class="btn btn--primary" href="tel:+989113340103">تماس برای استعلام</a>
+              <a class="btn btn--ghost" href="https://ble.ir/bimeiran_yahyazadeh" target="_blank" rel="noopener noreferrer">پیام در بله</a>
+            </div>
+            <p class="insurance-note">میزان خسارت و نحوه پرداخت تابع شرایط، استثناها و حدود تعهدات مندرج در بیمه‌نامه است.</p>
+          </article>
+
+          <article class="insurance-card insurance-card--home" aria-labelledby="home-insurance-h">
+            <span class="insurance-card__tag">☂ طرح حامی بیمه ایران</span>
+            <h3 class="insurance-card__title" id="home-insurance-h">خانه، اموال و جان شما زیر چتر بیمه ایران</h3>
+            <p class="insurance-card__text">با طرح جامع بیمه حامی شرکت سهامی بیمه ایران، با پوشش‌های معرفی‌شده برای حفاظت از دارایی‌های زندگی در برابر جنگ، بمباران، انفجار و حملات هوایی آشنا شوید. بنا بر شرایط طرح، پوشش‌های تکمیلی مانند آتش‌سوزی، صاعقه و برخی حوادث طبیعی نیز قابل بررسی است.</p>
+            <h4>پوشش‌های معرفی‌شده در طرح حامی</h4>
+            <ul class="insurance-list">
+              <li><strong>ساختمان و اثاثیه منزل:</strong> جبران خسارت‌های ناشی از آتش‌سوزی، جنگ، بمباران و انفجار به ساختمان، تأسیسات و لوازم منزل، طبق شرایط بیمه‌نامه.</li>
+              <li><strong>فوت یا نقص عضو:</strong> غرامت افراد ساکن در اثر آتش‌سوزی، جنگ و بمباران، در چارچوب تعهدات قرارداد.</li>
+              <li><strong>هزینه‌های پزشکی:</strong> هزینه‌های درمانی مرتبط با آتش‌سوزی، جنگ و حوادث تحت پوشش.</li>
+              <li><strong>خودرو در پارکینگ:</strong> خسارت آتش‌سوزی، جنگ و بمباران به خودروی مستقر در پارکینگ منزل مسکونی، طبق ضوابط بیمه‌نامه.</li>
+              <li><strong>اسکان موقت:</strong> هزینه اجاره یا اسکان موقت پس از خسارت‌های مشمول پوشش.</li>
+              <li><strong>پاکسازی ضایعات:</strong> هزینه برداشت و پاکسازی ضایعات پس از آتش‌سوزی، جنگ، زلزله و بمباران، طبق قرارداد.</li>
+              <li><strong>سرقت اثاثیه:</strong> پوشش سرقت اسباب و اثاثیه منزل در صورت درج و شمول در بیمه‌نامه.</li>
+              <li><strong>خطرهای طبیعی:</strong> امکان پوشش خسارت‌های ناشی از زلزله، سیل و طوفان، مطابق شرایط طرح.</li>
+              <li><strong>ترکیدگی لوله آب:</strong> بررسی پوشش خسارت‌های ناشی از ترکیدگی لوله آب بر اساس مفاد قرارداد.</li>
+            </ul>
+            <div class="insurance-facts">
+              <span>صدور اعلام‌شده: کمتر از یک ساعت</span>
+              <span>طبق معرفی طرح: بدون نیاز به بازدید</span>
+              <span>نمایندگی ۳۲۵۷۳ بیمه ایران</span>
+            </div>
+            <p class="insurance-card__text">در شرایط بحرانی، پیش از تصمیم‌گیری، جزئیات خطرهای تحت پوشش، سقف تعهدات، استثناها و شرایط صدور را از نمایندگی استعلام کنید.</p>
+            <div class="insurance-actions">
+              <a class="btn btn--primary" href="tel:+989376602439">تماس با نمایندگی</a>
+              <a class="btn btn--ghost" href="https://ble.ir/bimeiran_yahyazadeh" target="_blank" rel="noopener noreferrer">بله: <span class="insurance-handle">@bimeiran_yahyazadeh</span></a>
+            </div>
+            <p class="insurance-note">فهرست بالا بر اساس اطلاعات ارائه‌شده برای معرفی طرح تنظیم شده است؛ پوشش قطعی، میزان جبران خسارت و شرایط صدور را متن نهایی بیمه‌نامه تعیین می‌کند.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="band band--deep" id="about" aria-labelledby="about-h">
+    <div class="shell">
+      <div class="band__surface" data-reveal="soft">
+        <div class="about">
+          <div data-stagger>
+            <p class="eyebrow">درباره بیمه ایران</p>
+            <h2 class="band__title" id="about-h">همراهی مطمئن در مسیر زندگی</h2>
+            <p class="band__lead">
+در نمایندگی ۳۲۵۷۳ بیمه ایران، برای بررسی بیمه‌نامه و آشنایی با پوشش‌های مورد نیاز خودرو و خانه راهنمایی‌تان می‌کنیم.
+            </p>
+            <div class="features">
+              <div class="feature">
+                <span class="feature__num" aria-hidden="true">۰۱</span>
+                <h3 class="feature__title">شفافیت</h3>
+                <p class="feature__text">شرح روشن پوشش‌ها و توجه به حدود تعهدات هر بیمه‌نامه.</p>
+              </div>
+              <div class="feature">
+                <span class="feature__num" aria-hidden="true">۰۲</span>
+                <h3 class="feature__title">سرعت</h3>
+                <p class="feature__text">طبق اطلاعات طرح حامی، صدور بیمه‌نامه در کمتر از یک ساعت امکان‌پذیر است.</p>
+              </div>
+              <div class="feature">
+                <span class="feature__num" aria-hidden="true">۰۳</span>
+                <h3 class="feature__title">پشتیبانی</h3>
+                <p class="feature__text">برای استعلام شرایط، مشاوره و پیگیری از راه تلفن یا پیام در بله در دسترس هستیم.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__art" data-reveal="side">
+            <span class="about__glow" aria-hidden="true"></span>
+            <svg class="brand about__ring" viewBox="70.91 0 908.65 908.52" aria-hidden="true">
+              <use href="#a-ring" class="u-ring"/>
+            </svg>
+            <svg class="brand about__mark brand--tint" viewBox="70.91 0 908.65 908.52" role="img" aria-label="نشان بیمه ایران">
+              <use href="#a-ring" class="u-ring"/><use href="#a-rays" class="u-rays"/>
+              <use href="#a-sun" class="u-sun"/><use href="#a-waves" class="u-waves"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="band band--light" id="contact" aria-labelledby="contact-h">
+    <div class="shell">
+      <div class="band__surface" data-reveal="soft">
+        <span class="contact__watermark" aria-hidden="true">
+          <svg class="brand" viewBox="70.91 0 908.65 908.52"><use href="#a-waves" class="u-waves"/></svg>
+        </span>
+        <header class="band__head" data-stagger style="margin-bottom:0">
+          <p class="eyebrow">تماس با ما</p>
+          <h2 class="band__title" id="contact-h">در ارتباط باشیم</h2>
+        </header>
+        <div class="contact">
+          <div data-reveal>
+            <p class="band__lead">
+              برای مشاوره، استعلام بیمه بدنه و بررسی طرح حامی با نمایندگی ۳۲۵۷۳ بیمه ایران تماس بگیرید یا در بله پیام دهید.
+            </p>
+            <dl class="panel-list">
+              <div><dt>نمایندگی</dt><dd>نمایندگی ۳۲۵۷۳ بیمه ایران</dd></div>
+              <div><dt>تلفن اول</dt><dd><a href="tel:+989113340103" dir="ltr">۰۹۱۱۳۳۴۰۱۰۳</a></dd></div>
+              <div><dt>تلفن دوم</dt><dd><a href="tel:+989376602439" dir="ltr">۰۹۳۷۶۶۰۲۴۳۹</a></dd></div>
+              <div><dt>پیام در بله</dt><dd><a href="https://ble.ir/bimeiran_yahyazadeh" target="_blank" rel="noopener noreferrer" dir="ltr">@bimeiran_yahyazadeh</a></dd></div>
+            </dl>
+          </div>
+          <div data-reveal>
+            <p class="band__lead">دسترسی سریع به خدمات، راهنمای پوشش‌ها و اطلاعات نمایندگی.</p>
+            <nav class="links" aria-label="دسترسی سریع">
+              <a href="#home">خانه<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 4 6l3.5 3.5"/></svg></a>
+              <a href="#services">خدمات بیمه<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 4 6l3.5 3.5"/></svg></a>
+              <a href="#insurance">راهنمای بیمه بدنه و طرح حامی<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 4 6l3.5 3.5"/></svg></a>
+              <a href="#about">درباره بیمه ایران<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5 4 6l3.5 3.5"/></svg></a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell footer__inner">
+    <div>
+      <svg class="brand brand--tint footer__lockup" viewBox="0 0 1046.84 1226.09" role="img" aria-label="بیمه ایران">
+        <use href="#a-ring" class="u-ring"/>
+        <use href="#a-rays" class="u-rays"/>
+        <use href="#a-sun" class="u-sun"/>
+        <use href="#a-waves" class="u-waves"/>
+        <use href="#w-word" class="u-word"/>
+      </svg>
+      <p class="footer__text">نمایندگی ۳۲۵۷۳ بیمه ایران؛ مشاوره درباره بیمه بدنه خودرو و پوشش‌های طرح حامی.</p>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <h3>بخش‌ها</h3>
+        <a href="#home">خانه</a><br>
+        <a href="#services">خدمات</a><br>
+        <a href="#insurance">پوشش‌ها</a><br>
+        <a href="#about">درباره بیمه</a><br>
+        <a href="#contact">تماس</a>
+      </div>
+      <div class="footer__col">
+        <h3>خدمات</h3>
+        <a href="#services">شخص ثالث و بدنه</a><br>
+        <a href="#services">حریق</a><br>
+        <a href="#services">مسئولیت</a><br>
+        <a href="#services">حوادث انفرادی</a>
+      </div>
+    </div>
+    <div class="footer__base">
+      <p>© بیمه ایران | نمایندگی ۳۲۵۷۳</p>
+      <p>سازندگان وب‌سایت: ارتا حسن پور و بهنام رجبی</p>
+      <a href="#home">بازگشت به بالا</a>
+    </div>
+  </div>
+</footer>
+
+<a class="float-brand" href="#home" aria-label="بیمه ایران، بازگشت به ابتدای صفحه">
+  <svg class="brand" viewBox="70.91 0 908.65 908.52" aria-hidden="true">
+    <use href="#a-ring" class="u-ring"/><use href="#a-rays" class="u-rays"/>
+    <use href="#a-sun" class="u-sun"/><use href="#a-waves" class="u-waves"/>
+  </svg>
+  <span class="float-brand__label">بیمه ایران</span>
+</a>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" aria-describedby="panel-lead">
+  <div class="panel__grip" aria-hidden="true"><span></span></div>
+  <div class="panel__scroll" id="panel-scroll">
+    <header class="panel__head">
+      <p class="eyebrow">خدمات بیمه ایران</p>
+      <h2 class="panel__title" id="panel-title">—</h2>
+      <p class="panel__lead" id="panel-lead">—</p>
+      <button class="panel__close" type="button" data-close aria-label="بستن پنل">
+        <i aria-hidden="true"></i><span>بستن</span>
+      </button>
+    </header>
+    <div class="panel__body" id="panel-body"></div>
+  </div>
+  <footer class="panel__foot">
+    <p class="panel__note">برای بررسی شرایط، حدود تعهدات و استعلام صدور، با نمایندگی ۳۲۵۷۳ تماس بگیرید.</p>
+    <div class="panel__actions">
+      <a class="btn btn--primary" href="tel:+989113340103" data-no-drag>مشاوره تلفنی</a>
+    </div>
+    <p class="panel__hint" aria-hidden="true">برای بستن، پنل را به سمت راست بکشید.</p>
+  </footer>
+</aside>
+
+<script>
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  /* ---------- 1. service panel content ---------- */
+  var P = "برای اطلاع از جزئیات، شرایط و استثناهای پوشش، مفاد بیمه‌نامه را بررسی کنید.";
+  var P2 = "حدود تعهدات، مدارک مورد نیاز و امکان صدور به نوع بیمه‌نامه و شرایط آن بستگی دارد؛ پیش از خرید استعلام بگیرید.";
+  var SERVICES = {
+    "third-party": {
+      title: "شخص ثالث و بدنه",
+      lead: "برای بیمه شخص ثالث و بدنه خودرو مشاوره بگیرید و ارزش بیمه‌نامه بدنه را با ارزش روز خودرو مقایسه کنید.",
+      sections: [
+        { h: "چرا ارزش بیمه بدنه مهم است؟", p: "در صورت قدیمی بودن ارزش ثبت‌شده در بیمه‌نامه، مبلغ خسارت ممکن است هزینه واقعی تعمیر را پوشش ندهد و بخشی از آن بر عهده مالک بماند." },
+        { h: "الحاقیه افزایش سرمایه", p: "با استعلام از نمایندگی، شرایط به‌روزرسانی ارزش بیمه‌نامه بدنه و صدور الحاقیه افزایش سرمایه را بررسی کنید." },
+        { h: "برای استعلام", p: "تماس: ۰۹۱۱۳۳۴۰۱۰۳ | پیام در بله: @bimeiran_yahyazadeh" },
+        { h: "توجه", p: "پرداخت خسارت تابع شرایط، استثناها و حدود تعهدات مندرج در بیمه‌نامه است." }
+      ]
+    },
+    "fire": {
+      title: "حریق و طرح حامی منزل",
+      lead: "طرح حامی بیمه ایران برای پوشش خسارت‌های مشخص به ساختمان، اثاثیه و برخی خطرهای دیگر معرفی شده است.",
+      sections: [
+        { h: "پوشش‌های معرفی‌شده", p: "آتش‌سوزی، جنگ، بمباران و انفجار و نیز برخی پوشش‌های تکمیلی مانند زلزله، سیل، طوفان، سرقت اثاثیه و ترکیدگی لوله، مطابق شرایط بیمه‌نامه." },
+        { h: "خدمات تکمیلی", p: "بر اساس مفاد قرارداد، ممکن است مواردی مانند هزینه‌های پزشکی، اسکان موقت، پاکسازی ضایعات و خسارت خودرو در پارکینگ نیز بررسی شود." },
+        { h: "صدور و استعلام", p: "اطلاعات معرفی طرح از صدور در کمتر از یک ساعت و بدون نیاز به بازدید حکایت دارد؛ شرایط نهایی را پیش از صدور از نمایندگی تأیید کنید." },
+        { h: "تماس با نمایندگی", p: "۰۹۳۷۶۶۰۲۴۳۹ | بله: @bimeiran_yahyazadeh" }
+      ]
+    },
+    "liability": {
+      title: "مسئولیت",
+      lead: "پوشش بیمه مسئولیت با توجه به نوع شغل، فعالیت یا مسئولیت قانونی مورد نیاز انتخاب می‌شود.",
+      sections: [
+        { h: "معرفی خدمت", p: "بیمه مسئولیت می‌تواند برای مدیریت بخشی از پیامدهای مالی مسئولیت‌های تحت پوشش به کار رود؛ نوع پوشش باید متناسب با فعالیت شما تعیین شود." },
+        { h: "حوزه‌های کاربرد", p: "پوشش‌های قابل ارائه و استثناها بر اساس رشته بیمه‌ای، شرایط فعالیت و مفاد قرارداد متفاوت‌اند." },
+        { h: "فرآیند و مدارک", p: "برای دریافت فهرست مدارک و بررسی شرایط صدور، نوع فعالیت و پوشش مورد نیاز را با نمایندگی مطرح کنید." },
+        { h: "پرسش‌های متداول", p: "پیش از صدور، حدود تعهدات، فرانشیزها و استثناهای بیمه‌نامه را بررسی کنید." }
+      ]
+    },
+    "accident": {
+      title: "حوادث انفرادی",
+      lead: "برای آشنایی با پوشش‌های بیمه حوادث انفرادی، شرایط و سرمایه‌های قابل انتخاب از نمایندگی استعلام بگیرید.",
+      sections: [
+        { h: "معرفی خدمت", p: "بیمه حوادث انفرادی با توجه به خطرهای تحت پوشش و شرایط مندرج در بیمه‌نامه، برای جبران برخی پیامدهای مالی حوادث طراحی می‌شود." },
+        { h: "پوشش‌های قابل ارائه", p: "نوع پوشش، سرمایه بیمه‌شده، استثناها و حدود تعهدات به طرح و قرارداد انتخابی بستگی دارد." },
+        { h: "فرآیند و مدارک", p: "مدارک لازم و شرایط صدور برای هر طرح متفاوت است؛ پیش از ثبت درخواست از نمایندگی استعلام بگیرید." },
+        { h: "پرسش‌های متداول", p: "برای اطمینان از تناسب بیمه‌نامه با نیاز خود، تمام پوشش‌ها و استثناها را پیش از صدور مرور کنید." }
+      ]
+    }
+  };
+
+  /* ---------- 2. scroll-driven scene ---------- */
+  var scene = {
+    target: 0, cur: 0, mx: 0, my: 0, tmx: 0, tmy: 0,
+    max: 1, vh: 1, raf: 0, idle: 0
+  };
+
+  function measure() {
+    scene.vh = window.innerHeight || 1;
+    scene.max = Math.max(1, document.documentElement.scrollHeight - scene.vh);
+  }
+
+  function writeVars() {
+    var p = scene.cur / scene.max;
+    var rise = Math.min(1, scene.cur / (scene.vh * 1.15));
+    root.style.setProperty("--p", p.toFixed(4));
+    root.style.setProperty("--hero", Math.min(1.4, scene.cur / scene.vh).toFixed(4));
+    root.style.setProperty("--rise", rise.toFixed(4));
+    root.style.setProperty("--mx", scene.mx.toFixed(4));
+    root.style.setProperty("--my", scene.my.toFixed(4));
+  }
+
+  function frame() {
+    scene.raf = 0;
+    var dp = scene.target - scene.cur;
+    scene.cur += dp * 0.16;
+    scene.mx += (scene.tmx - scene.mx) * 0.07;
+    scene.my += (scene.tmy - scene.my) * 0.07;
+    var settled = Math.abs(dp) < 0.4 && Math.abs(scene.tmx - scene.mx) < 0.004 && Math.abs(scene.tmy - scene.my) < 0.004;
+    if (settled) { scene.cur = scene.target; scene.mx = scene.tmx; scene.my = scene.tmy; }
+    writeVars();
+    if (!settled) request();
+  }
+
+  function request() {
+    if (!scene.raf) scene.raf = requestAnimationFrame(frame);
+  }
+
+  /* ---------- 3. top bar state + active section ---------- */
+  var topbar = document.getElementById("topbar");
+  var menuToggle = document.getElementById("menu-toggle");
+  var sheet = document.getElementById("menu-sheet");
+  var navLinks = [].slice.call(document.querySelectorAll(".menu a"));
+
+  function closeSheet() {
+    if (!sheet.classList.contains("is-open")) return;
+    sheet.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "نمایش منو");
+  }
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      var open = sheet.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      menuToggle.setAttribute("aria-label", open ? "بستن منو" : "نمایش منو");
+    });
+    sheet.addEventListener("click", function (e) {
+      if (e.target.closest("a")) closeSheet();
+    });
+  }
+
+  function syncBar() {
+    var scrolled = window.scrollY > 16;
+    if (scrolled !== (root.dataset.scrolled === "1")) {
+      root.dataset.scrolled = scrolled ? "1" : "0";
+    }
+    if (!scrolled) closeSheet();
+  }
+
+  function setActive(id) {
+    navLinks.forEach(function (a) {
+      if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  }
+
+  /* ---------- 4. panel (open / close / drag) ---------- */
+  var panel = document.getElementById("panel");
+  var scrim = document.getElementById("scrim");
+  var panelBody = document.getElementById("panel-body");
+  var panelTitle = document.getElementById("panel-title");
+  var panelLead = document.getElementById("panel-lead");
+  var panelScroll = document.getElementById("panel-scroll");
+  var lastFocus = null;
+  var drag = null;
+
+  scrim.hidden = false;
+
+  function render(id) {
+    var s = SERVICES[id];
+    if (!s) return false;
+    panelTitle.textContent = s.title;
+    panelLead.textContent = s.lead;
+    panelBody.innerHTML = s.sections.map(function (sec, i) {
+      var list = sec.list
+        ? '<dl class="psection__list">' + sec.list.map(function (row) {
+            return "<div><dt>" + row[0] + "</dt><dd>" + row[1] + "</dd></div>";
+          }).join("") + "</dl>"
+        : "";
+      return '<section class="psection" style="--i:' + i + '">' +
+        '<h3 class="psection__h">' + sec.h + "</h3>" +
+        '<p class="psection__p">' + sec.p + "</p>" + list + "</section>";
+    }).join("");
+    return true;
+  }
+
+  function openPanel(id, trigger) {
+    if (!render(id)) return;
+    lastFocus = trigger || document.activeElement;
+    panel.classList.add("is-open");
+    scrim.classList.add("is-open");
+    root.classList.add("is-locked");
+    panelScroll.scrollTop = 0;
+    var close = panel.querySelector(".panel__close");
+    if (close) close.focus();
+  }
+
+  function closePanel() {
+    if (!panel.classList.contains("is-open")) return;
+    panel.classList.remove("is-open");
+    scrim.classList.remove("is-open");
+    root.classList.remove("is-locked");
+    panel.style.transform = "";
+    scrim.style.opacity = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    lastFocus = null;
+  }
+
+  document.addEventListener("click", function (e) {
+    var opener = e.target.closest("[data-service]");
+    if (opener) { openPanel(opener.getAttribute("data-service"), opener); return; }
+    if (e.target.closest("[data-close]")) { closePanel(); return; }
+    if (e.target === scrim) closePanel();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if (panel.classList.contains("is-open")) closePanel();
+      else closeSheet();
+    }
+    if (e.key !== "Tab" || !panel.classList.contains("is-open")) return;
+    var items = [].filter.call(
+      panel.querySelectorAll('a[href],button:not([disabled]),input,textarea,select,[tabindex]:not([tabindex="-1"])'),
+      function (el) { return el.offsetWidth > 0 || el.offsetHeight > 0; }
+    );
+    if (!items.length) return;
+    var first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  /* drag to close: panel is anchored to the right, so dragging right closes it */
+  var NO_DRAG = "a,button,input,textarea,select,[data-no-drag]";
+
+  function onDown(e) {
+    if (!panel.classList.contains("is-open") || drag) return;
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    if (e.target.closest(NO_DRAG)) return;
+    drag = { id: e.pointerId, x0: e.clientX, y0: e.clientY, dx: 0, w: 0, horizontal: false, decided: false, t0: performance.now(), raf: 0 };
+  }
+
+  function paint() {
+    drag.raf = 0;
+    var dx = drag.dx;
+    var shown = dx > 0 ? dx : dx * 0.22;
+    panel.style.transform = "translateX(" + shown.toFixed(1) + "px)";
+    scrim.style.opacity = String(Math.max(0, 1 - Math.max(0, dx) / (drag.w * 0.9)));
+  }
+
+  function onMove(e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var dx = e.clientX - drag.x0;
+    var dy = e.clientY - drag.y0;
+    if (!drag.decided) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+      drag.decided = true;
+      drag.horizontal = Math.abs(dx) > Math.abs(dy) * 1.05;
+      if (!drag.horizontal) { drag = null; return; }
+      drag.w = panel.offsetWidth || 1;
+      panel.classList.add("is-dragging");
+      scrim.classList.add("is-dragging");
+      if (panel.setPointerCapture) panel.setPointerCapture(drag.id);
+    }
+    drag.dx = dx;
+    if (!drag.raf) drag.raf = requestAnimationFrame(paint);
+  }
+
+  function onUp(e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var d = drag;
+    drag = null;
+    if (!d.decided || !d.horizontal) return;
+    if (d.raf) cancelAnimationFrame(d.raf);
+    var ms = Math.max(1, performance.now() - d.t0);
+    var velocity = d.dx / ms;
+    panel.classList.remove("is-dragging");
+    scrim.classList.remove("is-dragging");
+    panel.style.transform = "";
+    scrim.style.opacity = "";
+    if (d.dx > d.w * 0.26 || (d.dx > d.w * 0.07 && velocity > 0.5)) closePanel();
+  }
+
+  panel.addEventListener("pointerdown", onDown);
+  panel.addEventListener("pointermove", onMove);
+  panel.addEventListener("pointerup", onUp);
+  panel.addEventListener("pointercancel", onUp);
+  panel.addEventListener("lostpointercapture", onUp);
+  window.addEventListener("blur", function () { drag = null; });
+
+  /* ---------- 5. scroll wiring ---------- */
+  function onScroll() {
+    scene.target = window.pageYOffset || window.scrollY || 0;
+    syncBar();
+    /* the last section stays current while the footer is on screen */
+    if (scene.target + scene.vh > scene.max + scene.vh - 12) setActive("contact");
+    request();
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { measure(); onScroll(); }, { passive: true });
+  window.addEventListener("orientationchange", function () { measure(); onScroll(); });
+
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    window.addEventListener("pointermove", function (e) {
+      var hw = window.innerWidth / 2, hh = window.innerHeight / 2;
+      scene.tmx = Math.max(-1, Math.min(1, (e.clientX - hw) / hw));
+      scene.tmy = Math.max(-1, Math.min(1, (e.clientY - hh) / hh));
+      request();
+    }, { passive: true });
+  }
+
+  /* ---------- 6. reveal on scroll ---------- */
+  var revealables = [].slice.call(document.querySelectorAll("[data-reveal],[data-stagger]"));
+
+  function revealAll() {
+    revealables.forEach(function (el) { el.classList.add("is-in"); });
+  }
+
+  if (reduce.matches || !("IntersectionObserver" in window)) {
+    revealAll();
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+    revealables.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- 7. active nav link ---------- */
+  var sections = ["home", "services", "insurance", "about", "contact"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if ("IntersectionObserver" in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* ---------- 8. boot ---------- */
+  if (reduce.matches) {
+    root.style.setProperty("--p", "0.5");
+    root.style.setProperty("--rise", "0.6");
+    revealAll();
+  } else {
+    onScroll();
+  }
+  measure();
+  onScroll();
+  requestAnimationFrame(function () { root.classList.add("is-ready"); });
+})();
+</script>
+</body>
+</html>
